@@ -212,7 +212,6 @@ img {
 .intro-avatar img {
     width: 200px;             /* Ảnh rộng bằng cột chứa nó */
     height: 200px;            /* Chiều cao tự động theo tỷ lệ */
-    border-radius: 50%;      /* Bo tròn ảnh thành hình tròn */
     /* border-radius: 10px;  <- Dùng dòng này nếu bạn muốn ảnh góc bo tròn nhẹ thay vì tròn hẳn */
     box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* (Tùy chọn) Thêm bóng mờ nhẹ cho ảnh nổi bật */
 }
@@ -242,6 +241,7 @@ img {
         margin-bottom: 30px;    /* Thêm khoảng cách với phần chữ bên dưới */
     }
 }
+
 
 
 
