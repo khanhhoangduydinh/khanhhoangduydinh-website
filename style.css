@@ -187,7 +187,7 @@ img {
     
     .project-img {
         width: 100%; /* Ảnh full màn hình điện thoại */
-        margin-bottom: 20px;
+        margin-bottom: 2px;
     }
 }
 
@@ -239,6 +239,7 @@ img {
         margin-bottom: 30px;    /* Thêm khoảng cách với phần chữ bên dưới */
     }
 }
+
 
 
 
