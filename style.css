@@ -191,8 +191,14 @@ img {
 
 /* Cột bên trái chứa Avatar */
 .intro-avatar {
-    flex: 1;                 /* Chiếm 1 phần không gian (tương đương 1/3) */
-    min-width: 200px;        /* Đảm bảo ảnh không bị quá nhỏ trên màn hình hẹp */
+    /* XÓA hoặc COMMENT dòng này: flex: 1; */
+    /* flex: 1; */ 
+
+    /* THÊM dòng này: */
+    flex: 0 0 auto; /* Không cho phép hộp giãn ra, chỉ to bằng nội dung bên trong */
+    
+    /* Đảm bảo không có lề phải thừa */
+    margin-right: 20px; /* Bạn có thể chỉnh số này để thay đổi khoảng cách với chữ (ví dụ 10px hoặc 30px) */
 }
 
 /* Trang trí cho ảnh Avatar */
@@ -228,6 +234,7 @@ img {
         margin-bottom: 30px;    /* Thêm khoảng cách với phần chữ bên dưới */
     }
 }
+
 
 
 
