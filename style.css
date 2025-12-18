@@ -96,7 +96,7 @@ img {
     width: 100%;
     height: 300px;        /* Đặt chiều cao cứng (giống bìa Facebook ~312px) */
                           /* Bạn có thể tăng lên 400px hoặc giảm xuống 300px tùy ý */
-    object-position: center 85%; /* Căn chỉnh vị trí cắt: */
+    object-position: center 100%; /* Căn chỉnh vị trí cắt: */
                                  /* 'center' là căn giữa chiều ngang */
                                  /* '85%' là vị trí theo chiều dọc (0% là đỉnh, 100% là đáy) */
                                  /* Mình để 85% để lấy phần người, tránh bị cắt mất chân hoặc quá sát đáy */
@@ -233,6 +233,7 @@ img {
         margin-bottom: 30px;    /* Thêm khoảng cách với phần chữ bên dưới */
     }
 }
+
 
 
 
