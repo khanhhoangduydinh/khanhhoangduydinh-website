@@ -1,0 +1,175 @@
+/* --- 1. CẤU HÌNH CHUNG (RESET) --- */
+/* Dấu * đại diện cho tất cả mọi phần tử trên trang */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Giúp tính toán kích thước padding không làm vỡ khung */
+}
+
+/* Thiết lập font chữ và màu sắc cơ bản */
+body {
+    /* Font chữ có chân (Serif) tạo cảm giác học thuật, cổ điển giống mẫu */
+    font-family: 'Times New Roman', Times, serif; 
+    font-size: 18px; /* Kích thước chữ vừa phải, dễ đọc */
+    line-height: 1.6; /* Khoảng cách giữa các dòng */
+    color: #333; /* Màu chữ đen xám nhẹ, đỡ mỏi mắt hơn đen tuyền */
+    background-color: #fff; /* Nền trắng */
+}
+
+a {
+    text-decoration: none; /* Bỏ gạch chân mặc định của link */
+    color: #000; /* Link màu đen */
+}
+
+a:hover {
+    text-decoration: underline; /* Khi di chuột vào thì hiện gạch chân */
+    color: #555; /* Đổi màu nhạt hơn chút */
+}
+
+/* --- 2. BỐ CỤC CHÍNH (LAYOUT 2 CỘT) --- */
+.wrapper {
+    display: flex; /* Đây là lệnh quan trọng nhất: Xếp 2 phần tử nằm ngang hàng nhau */
+    min-height: 100vh; /* Chiều cao tối thiểu bằng màn hình */
+}
+
+/* --- 3. CỘT TRÁI (SIDEBAR MENU) --- */
+.sidebar {
+    width: 280px; /* Chiều rộng cố định của cột menu */
+    padding: 40px; /* Khoảng cách từ nội dung đến viền */
+    
+    /* Giữ menu cố định khi cuộn trang */
+    position: sticky; 
+    top: 0;
+    height: 100vh; /* Chiều cao bằng màn hình */
+    
+    border-right: 1px solid #eee; /* Đường kẻ mờ ngăn cách với nội dung (tùy chọn) */
+}
+
+.site-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px; /* Cách menu bên dưới một đoạn */
+    letter-spacing: 1px; /* Khoảng cách giữa các chữ cái rộng ra chút */
+    text-transform: uppercase; /* Viết hoa toàn bộ tên */
+}
+
+.nav-menu ul {
+    list-style: none; /* Bỏ dấu chấm tròn đầu dòng */
+}
+
+.nav-menu li {
+    margin-bottom: 12px; /* Khoảng cách giữa các mục menu */
+}
+
+.nav-menu a {
+    font-size: 16px;
+    color: #666;
+}
+
+.nav-menu a:hover {
+    color: #000;
+}
+
+.sidebar-footer {
+    position: absolute; /* Định vị tuyệt đối */
+    bottom: 40px; /* Nằm sát đáy */
+    font-size: 12px;
+    color: #999;
+}
+
+/* --- 4. CỘT PHẢI (NỘI DUNG CHÍNH) --- */
+.content {
+    flex: 1; /* Lệnh này bảo cột nội dung hãy chiếm hết phần khoảng trống còn lại */
+    padding: 60px 80px; /* Khoảng cách lề: Trên/Dưới 60px, Trái/Phải 80px */
+    max-width: 1000px; /* Giới hạn chiều rộng nội dung để dòng chữ không quá dài khó đọc */
+}
+
+/* Chỉnh ảnh */
+img {
+    max-width: 100%; /* Ảnh không bao giờ to quá khung chứa nó */
+    height: auto; /* Chiều cao tự động theo tỷ lệ */
+    display: block;
+}
+
+.hero-image {
+    margin-bottom: 30px;
+}
+
+.caption {
+    font-style: italic; /* Chữ nghiêng cho chú thích ảnh */
+    font-size: 14px;
+    color: #777;
+    margin-top: 10px;
+}
+
+/* Tiêu đề các phần */
+.intro-text h2, 
+.section-title {
+    font-size: 22px;
+    font-weight: normal; /* Không in đậm quá mức, giữ nét thanh mảnh */
+    margin-bottom: 20px;
+    border-bottom: 1px solid #000; /* Đường gạch chân dài dưới tiêu đề */
+    padding-bottom: 10px;
+    margin-top: 40px;
+}
+
+.section {
+    margin-bottom: 60px; /* Khoảng cách giữa các section lớn */
+}
+
+/* Bài viết/Dự án */
+.project-item {
+    display: flex; /* Xếp chữ và ảnh nằm ngang */
+    gap: 30px; /* Khoảng cách giữa chữ và ảnh */
+    margin-bottom: 40px;
+}
+
+.project-info {
+    flex: 1; /* Chữ chiếm phần lớn */
+}
+
+.project-info h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.project-img {
+    width: 200px; /* Kích thước cố định cho ảnh thumbnail */
+    flex-shrink: 0; /* Không cho ảnh bị co lại */
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 40px 0;
+}
+
+/* --- 5. RESPONSIVE (GIAO DIỆN ĐIỆN THOẠI) --- */
+/* Khi màn hình nhỏ hơn 768px (máy tính bảng và điện thoại) */
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column; /* Đổi từ ngang sang dọc: Menu lên trên, nội dung xuống dưới */
+    }
+
+    .sidebar {
+        width: 100%; /* Menu chiếm hết chiều ngang */
+        height: auto; /* Chiều cao tự do */
+        position: relative; /* Không dính cứng nữa */
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding: 20px;
+    }
+    
+    .content {
+        padding: 30px 20px; /* Giảm lề cho đỡ chật trên điện thoại */
+    }
+
+    .project-item {
+        flex-direction: column-reverse; /* Đưa ảnh lên trên hoặc dưới chữ tùy ý */
+    }
+    
+    .project-img {
+        width: 100%; /* Ảnh full màn hình điện thoại */
+        margin-bottom: 20px;
+    }
+}
