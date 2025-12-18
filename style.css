@@ -100,6 +100,10 @@ img {
     font-size: 14px;
     color: #777;
     margin-top: 10px;
+
+    /* --- THÊM DÒNG NÀY ĐỂ CĂN GIỮA --- */
+    text-align: center;       
+    display: block;           /* Đảm bảo nó là khối để căn giữa hoạt động tốt */
 }
 
 /* Tiêu đề các phần */
@@ -173,4 +177,5 @@ img {
         margin-bottom: 20px;
     }
 }
+
 
