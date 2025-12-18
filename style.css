@@ -101,7 +101,7 @@ img {
 
     /* 3. QUAN TRỌNG: Cắt ảnh để vừa khung mà không bị méo hình */
     /* object-fit: cover; sẽ giữ nguyên tỷ lệ gốc của ảnh và cắt bớt phần thừa */
-    object-fit: cover;
+    object-position: bottom;
 
     /* (Tùy chọn) Căn giữa bức ảnh nếu phần quan trọng bị cắt mất */
     /* object-position: center center; */
@@ -241,6 +241,7 @@ img {
         margin-bottom: 30px;    /* Thêm khoảng cách với phần chữ bên dưới */
     }
 }
+
 
 
 
