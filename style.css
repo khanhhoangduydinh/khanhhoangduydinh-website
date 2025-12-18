@@ -36,7 +36,7 @@ a:hover {
 .sidebar {
     width: 300px; /* Chiều rộng cố định của cột menu */
     padding: 40px; /* Khoảng cách từ nội dung đến viền */
-    
+     border-radius: 50%;      /* Bo tròn ảnh thành hình tròn */
     /* Giữ menu cố định khi cuộn trang */
     position: sticky; 
     top: 0;
@@ -199,7 +199,7 @@ img {
 .intro-container {
     display: flex;           /* Kích hoạt Flexbox */
     align-items: flex-start; /* Căn thẳng hàng đầu trang (hoặc center để căn giữa) */
-    gap: 50px;               /* Khoảng cách giữa cột ảnh và cột chữ */
+    gap: 20px;               /* Khoảng cách giữa cột ảnh và cột chữ */
 }
 
 /* Cột bên trái chứa Avatar */
@@ -241,6 +241,7 @@ img {
         margin-bottom: 30px;    /* Thêm khoảng cách với phần chữ bên dưới */
     }
 }
+
 
 
 
