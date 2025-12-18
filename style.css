@@ -191,7 +191,6 @@ img {
 .intro-container {
     display: flex;           /* Kích hoạt Flexbox */
     align-items: flex-start; /* Căn thẳng hàng đầu trang (hoặc center để căn giữa) */
-    gap: 2px;               /* Khoảng cách giữa cột ảnh và cột chữ */
 }
 
 /* Cột bên trái chứa Avatar */
@@ -233,6 +232,7 @@ img {
         margin-bottom: 30px;    /* Thêm khoảng cách với phần chữ bên dưới */
     }
 }
+
 
 
 
