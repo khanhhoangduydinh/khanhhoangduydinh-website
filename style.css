@@ -94,14 +94,8 @@ img {
 .hero-image img {
     /* 1. Đảm bảo ảnh luôn rộng hết mức có thể của cột nội dung */
     width: 100%;
-
-/* --- SỬA ĐỔI QUAN TRỌNG Ở ĐÂY --- */
     height: 300px;        /* Đặt chiều cao cứng (giống bìa Facebook ~312px) */
                           /* Bạn có thể tăng lên 400px hoặc giảm xuống 300px tùy ý */
-    
-    object-fit: cover;    /* Lệnh này bắt buộc ảnh phải lấp đầy khung 350px này */
-                          /* Vì ảnh gốc cao hơn 350px, nó sẽ buộc phải phóng to và cắt bớt */
-    
     object-position: center 85%; /* Căn chỉnh vị trí cắt: */
                                  /* 'center' là căn giữa chiều ngang */
                                  /* '85%' là vị trí theo chiều dọc (0% là đỉnh, 100% là đáy) */
@@ -239,6 +233,7 @@ img {
         margin-bottom: 30px;    /* Thêm khoảng cách với phần chữ bên dưới */
     }
 }
+
 
 
 
