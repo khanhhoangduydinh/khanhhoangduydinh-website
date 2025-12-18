@@ -34,7 +34,7 @@ a:hover {
 
 /* --- 3. CỘT TRÁI (SIDEBAR MENU) --- */
 .sidebar {
-    width: 280px; /* Chiều rộng cố định của cột menu */
+    width: 300px; /* Chiều rộng cố định của cột menu */
     padding: 40px; /* Khoảng cách từ nội dung đến viền */
     
     /* Giữ menu cố định khi cuộn trang */
@@ -81,7 +81,7 @@ a:hover {
 .content {
     flex: 1; /* Lệnh này bảo cột nội dung hãy chiếm hết phần khoảng trống còn lại */
     padding: 60px 80px; /* Khoảng cách lề: Trên/Dưới 60px, Trái/Phải 80px */
-    max-width: 1000px; /* Giới hạn chiều rộng nội dung để dòng chữ không quá dài khó đọc */
+    max-width: 1600px; /* Giới hạn chiều rộng nội dung để dòng chữ không quá dài khó đọc */
 }
 
 /* Chỉnh ảnh */
@@ -173,3 +173,4 @@ img {
         margin-bottom: 20px;
     }
 }
+
