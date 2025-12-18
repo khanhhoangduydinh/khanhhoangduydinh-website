@@ -95,19 +95,17 @@ img {
     /* 1. Đảm bảo ảnh luôn rộng hết mức có thể của cột nội dung */
     width: 100%;
 
-    /* 2. Thiết lập tỷ lệ khung hình chữ nhật ngang (giống Facebook) */
-    /* Tỷ lệ 8/3 là gần nhất với Facebook. Bạn có thể thử 21/9 nếu muốn nó dài hơn nữa */
-    aspect-ratio: 8 / 3;
-
-    /* 3. QUAN TRỌNG: Cắt ảnh để vừa khung mà không bị méo hình */
-    /* object-fit: cover; sẽ giữ nguyên tỷ lệ gốc của ảnh và cắt bớt phần thừa */
-    object-position: bottom;
-
-    /* (Tùy chọn) Căn giữa bức ảnh nếu phần quan trọng bị cắt mất */
-    /* object-position: center center; */
-
-    /* (Tùy chọn) Bo tròn góc nhẹ cho đẹp */
-    /* border-radius: 8px; */
+/* --- SỬA ĐỔI QUAN TRỌNG Ở ĐÂY --- */
+    height: 300px;        /* Đặt chiều cao cứng (giống bìa Facebook ~312px) */
+                          /* Bạn có thể tăng lên 400px hoặc giảm xuống 300px tùy ý */
+    
+    object-fit: cover;    /* Lệnh này bắt buộc ảnh phải lấp đầy khung 350px này */
+                          /* Vì ảnh gốc cao hơn 350px, nó sẽ buộc phải phóng to và cắt bớt */
+    
+    object-position: center 85%; /* Căn chỉnh vị trí cắt: */
+                                 /* 'center' là căn giữa chiều ngang */
+                                 /* '85%' là vị trí theo chiều dọc (0% là đỉnh, 100% là đáy) */
+                                 /* Mình để 85% để lấy phần người, tránh bị cắt mất chân hoặc quá sát đáy */
 }
 
 .caption {
@@ -241,6 +239,7 @@ img {
         margin-bottom: 30px;    /* Thêm khoảng cách với phần chữ bên dưới */
     }
 }
+
 
 
 
