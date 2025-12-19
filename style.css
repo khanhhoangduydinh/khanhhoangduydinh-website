@@ -394,6 +394,21 @@ p.caption + p.caption {
     }
 }
 
+/* --- CSS CHO ADVISOR (Căn thẳng hàng tên) --- */
+.advisor-wrapper {
+    display: flex;              /* Xếp ngang 2 khối (Nhãn và Tên) */
+    align-items: flex-start;    /* Căn hàng từ mép trên */
+}
+
+.advisor-label {
+    white-space: nowrap;        /* Không cho chữ Advisor bị ngắt dòng */
+    margin-right: 5px;          /* Khoảng cách nhỏ giữa Advisor: và Tên */
+    /* font-weight: bold; */    /* Bỏ comment nếu muốn chữ Advisor in đậm */
+}
+
+.advisor-names div {
+    margin-bottom: 2px;         /* Khoảng cách thoáng giữa 2 cái tên */
+}
 
 
 
