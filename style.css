@@ -185,7 +185,7 @@ p.caption + p.caption {
 .biography-layout {
     display: flex;          
     gap: 40px;              
-    align-items: flex-start; 
+    align-items: stretch; 
 }
 
 .bio-left-col {
@@ -289,3 +289,4 @@ p.caption + p.caption {
         width: 100%;
     }
 }
+
