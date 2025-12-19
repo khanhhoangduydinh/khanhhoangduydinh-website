@@ -150,16 +150,21 @@ p.caption + p.caption {
 
 /* --- CSS RIÊNG CHO TIÊU ĐỀ INTRODUCTION --- */
 .intro-title {
-    /* ĐÃ SỬA: Đổi thành border-TOP để kẻ nằm TRÊN chữ như bạn muốn */
+    /* 1. Sửa lỗi cú pháp: Thêm dấu chấm phẩy (;) ở cuối dòng này */
     border-top: none;  
-    border-bottom: 1px solid #333; /* Đảm bảo không có kẻ dưới */
     
-    padding-top: 15px;
+    /* 2. Tạo đường kẻ dưới: ĐÚNG */
+    border-bottom: 1px solid #333; 
+    
+    /* 3. QUAN TRỌNG: Đổi padding-top thành padding-bottom 
+       để tạo khoảng thở giữa Chữ và Đường kẻ dưới */
+    padding-bottom: 15px; 
+    
+    /* Các thông số khác giữ nguyên */
     margin-bottom: 30px;
-    
     font-size: 24px;
     text-transform: uppercase; 
-    font-weight: normal;       
+    font-weight: normal;        
 }
 
 /* --- BỐ CỤC PHẦN GIỚI THIỆU (Avatar trái, Nội dung phải) --- */
@@ -334,6 +339,7 @@ p.caption + p.caption {
         width: 100%;
     }
 }
+
 
 
 
