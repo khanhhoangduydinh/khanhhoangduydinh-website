@@ -257,6 +257,30 @@ p.caption + p.caption {
     font-weight: normal;       /* Giữ nét chữ thanh mảnh */
 }
 
+/* --- CSS CHO PHẦN BIOGRAPHY VĂN XUÔI --- */
+
+.bio-text {
+    /* Giới hạn độ rộng để mắt người đọc không bị mỏi khi dòng quá dài */
+    max-width: 800px; 
+}
+
+.bio-text p {
+    margin-bottom: 25px;       /* Khoảng cách giữa các đoạn văn */
+    font-size: 18px;           /* Kích thước chữ dễ đọc */
+    line-height: 1.8;          /* Khoảng cách dòng thoáng hơn chút so với mặc định */
+    color: #333;               /* Màu chữ đen xám dịu mắt */
+    
+    /* Tùy chọn: Căn đều 2 bên lề cho giống trang sách/báo */
+    text-align: justify;       
+}
+
+/* (Tùy chọn) Làm chữ cái đầu tiên của đoạn đầu to lên (Drop Cap) cho nghệ thuật */
+/* .bio-text p:first-child::first-letter {
+    font-size: 3.5em;
+    float: left;
+    margin-right: 10px;
+    line-height: 0.8;
+} */
 
 
 
