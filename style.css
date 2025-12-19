@@ -340,6 +340,59 @@ p.caption + p.caption {
     }
 }
 
+/* --- CSS CHO PHẦN EDUCATION --- */
+
+.edu-item {
+    display: flex;              /* Xếp ngang hàng */
+    justify-content: space-between; /* Đẩy 2 phần ra 2 đầu (Trái - Phải) */
+    align-items: flex-start;    /* Căn chỉnh theo mép trên */
+    margin-bottom: 25px;        /* Khoảng cách giữa các mục Education */
+}
+
+.edu-info {
+    flex: 1;                    /* Phần nội dung chiếm hết khoảng trống còn lại */
+    padding-right: 20px;        /* Tạo khoảng hở để chữ không dính vào ngày tháng */
+}
+
+.edu-info h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.edu-school {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.edu-desc {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 2px;
+    line-height: 1.4;
+}
+
+.edu-date {
+    flex: 0 0 auto;             /* Không cho phép co giãn kích thước ngày tháng */
+    text-align: right;          /* Căn lề phải cho ngày tháng */
+    font-weight: bold;          /* In đậm ngày tháng (tùy chọn) */
+    color: #333;
+    white-space: nowrap;        /* Giữ ngày tháng trên 1 dòng */
+}
+
+/* --- Mobile Responsive cho Education --- */
+/* Khi màn hình nhỏ, ngày tháng sẽ rớt xuống dòng cho dễ đọc */
+@media (max-width: 768px) {
+    .edu-item {
+        flex-direction: column; 
+    }
+    .edu-date {
+        text-align: left;
+        margin-top: 5px;
+        font-style: italic;
+    }
+}
 
 
 
