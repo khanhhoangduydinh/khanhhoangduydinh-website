@@ -103,10 +103,15 @@ img {
     font-size: 16px;
     color: #777;
     margin-top: 10px;
-
-    /* --- THÊM DÒNG NÀY ĐỂ CĂN GIỮA --- */
     text-align: center;       
     display: block;           /* Đảm bảo nó là khối để căn giữa hoạt động tốt */
+    line-height: 1.4;  /* Giảm độ cao dòng xuống (mặc định là 1.6) */
+    margin-bottom: 0;  /* Loại bỏ khoảng trống thừa bên dưới mỗi dòng */
+}
+
+/* Nếu bạn lỡ dùng 2 thẻ <p class="caption"> riêng biệt, thêm đoạn này để kéo dòng thứ 2 lên */
+p.caption + p.caption {
+    margin-top: 5px; /* Chỉ cách dòng trên 5px thay vì khoảng cách mặc định */
 }
 
 /* Tiêu đề các phần */
@@ -251,6 +256,7 @@ img {
     text-transform: uppercase; /* Chữ in hoa */
     font-weight: normal;       /* Giữ nét chữ thanh mảnh */
 }
+
 
 
 
