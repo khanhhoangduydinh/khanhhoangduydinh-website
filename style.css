@@ -181,57 +181,67 @@ p.caption + p.caption {
     margin-bottom: 10px; /* Khoảng cách giữa các dòng thông tin */
 }
 
-/* --- CSS BỐ CỤC BIOGRAPHY (2 CỘT: CHỮ & SOCIAL) --- */
-.biography-layout {
-    display: flex;          
-    gap: 40px;              
-    align-items: stretch; 
+/* --- BỐ CỤC GIỐNG HÌNH MẪU --- */
+
+.bio-container {
+    display: flex;           /* Xếp 2 cột nằm ngang */
+    gap: 40px;               /* Khoảng cách giữa 2 cột */
+    
+    /* LỆNH QUAN TRỌNG NHẤT: Kéo dãn 2 cột bằng nhau để đường kẻ dài xuống */
+    align-items: stretch;    
 }
 
-.bio-left-col {
-    flex: 3;                
+/* CỘT TRÁI (Văn bản) */
+.bio-left-content {
+    flex: 3;                 /* Chiếm 3 phần (khoảng 75%) */
 }
 
-.bio-left-col p {
+.bio-left-content p {
     margin-bottom: 20px;
-    text-align: justify;    
+    text-align: justify;     /* Căn đều 2 bên lề cho văn bản đẹp */
 }
 
-.bio-right-col {
-    flex: 1;                
-    border-left: 2px solid #ddd; 
-    padding-left: 30px; 
-    padding-bottom: 20px;
+/* CỘT PHẢI (Kết nối) */
+.bio-right-connect {
+    flex: 1;                 /* Chiếm 1 phần (khoảng 25%) */
+    
+    /* Tạo đường kẻ dọc bên trái cột này */
+    border-left: 1px solid #ddd; /* Màu xám nhạt giống mẫu */
+    padding-left: 30px;      /* Cách đường kẻ ra một đoạn */
+    
+    /* Đảm bảo nội dung không dính sát lề trên */
+    padding-top: 5px; 
 }
 
-/* Các link social */
-.social-heading {
-    font-size: 14px;
-    text-transform: uppercase;
-    color: #999;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-}
-
-.social-item {
-    display: block;         
-    margin-bottom: 12px;
+/* Tiêu đề "Kết nối" */
+.connect-title {
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif; /* Font giống tiêu đề chính */
     color: #333;
+    margin-bottom: 20px;     /* Khoảng cách xuống các link */
+    font-weight: normal;     /* Không in đậm quá mức */
+}
+
+/* Danh sách link */
+.social-item {
+    display: flex;           /* Căn icon và chữ thẳng hàng ngang */
+    align-items: center;
+    margin-bottom: 15px;     /* Khoảng cách giữa các dòng */
     font-size: 15px;
+    color: #333;             /* Màu chữ đen xám */
     text-decoration: none;
+    transition: 0.2s;
 }
 
 .social-item i {
-    width: 25px;            
-    color: #555;
-    text-align: center;
+    width: 25px;             /* Cố định chiều rộng icon để các dòng thẳng tắp */
+    color: #555;             /* Icon màu xám đậm */
+    font-size: 18px;
 }
 
 .social-item:hover {
-    color: #0056b3;         
-}
-.social-item:hover i {
-    color: #0056b3;
+    color: #000;             /* Hover vào thì đen đậm lên */
+    text-decoration: underline;
 }
 
 /* --- RESPONSIVE (GIAO DIỆN ĐIỆN THOẠI) --- */
@@ -290,5 +300,6 @@ p.caption + p.caption {
         width: 100%;
     }
 }
+
 
 
