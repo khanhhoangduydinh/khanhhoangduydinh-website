@@ -151,7 +151,7 @@ p.caption + p.caption {
 /* --- CSS RIÊNG CHO TIÊU ĐỀ INTRODUCTION --- */
 .intro-title {
     /* ĐÃ SỬA: Đổi thành border-TOP để kẻ nằm TRÊN chữ như bạn muốn */
-    border-top: none  
+    border-top: none;  
     border-bottom: 1px solid #333; /* Đảm bảo không có kẻ dưới */
     
     padding-top: 15px;
@@ -334,6 +334,7 @@ p.caption + p.caption {
         width: 100%;
     }
 }
+
 
 
 
