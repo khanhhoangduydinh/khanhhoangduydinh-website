@@ -181,77 +181,111 @@ p.caption + p.caption {
     margin-bottom: 10px; /* Khoảng cách giữa các dòng thông tin */
 }
 
-/* --- BỐ CỤC BIOGRAPHY 2 CỘT (MỚI) --- */
-
-/* 1. Khung bao ngoài: Dùng Flexbox để xếp 2 cột nằm ngang */
-.bio-container {
-    display: flex;           /* Kích hoạt chế độ chia cột */
-    gap: 50px;               /* Khoảng cách giữa cột chữ và cột kết nối */
-    align-items: flex-start; /* Căn cho cả 2 cột bắt đầu từ trên cùng */
+/* --- CSS BỐ CỤC BIOGRAPHY (2 CỘT: CHỮ & SOCIAL) --- */
+.biography-layout {
+    display: flex;          
+    gap: 40px;              
+    align-items: flex-start; 
 }
 
-/* 2. Cột trái (Biography Text) */
-.bio-left-content {
-    flex: 2;                 /* Chiếm 2 phần không gian (khoảng 66%) */
+.bio-left-col {
+    flex: 3;                
 }
 
-.bio-left-content p {
+.bio-left-col p {
     margin-bottom: 20px;
-    text-align: justify;     /* Căn đều 2 bên lề văn bản */
+    text-align: justify;    
 }
 
-/* 3. Cột phải (Connection) */
-.bio-right-connect {
-    flex: 1;                 /* Chiếm 1 phần không gian (khoảng 33%) */
-    
-    /* Tạo đường kẻ dọc ngăn cách (Tùy chọn - nếu thích) */
-    border-left: 1px solid #ddd; 
-    padding-left: 30px;      
+.bio-right-col {
+    flex: 1;                
+    border-left: 2px solid #ddd; 
+    padding-left: 25px;     
 }
 
-/* --- TRANG TRÍ RIÊNG CHO PHẦN KẾT NỐI --- */
-.social-links-list {
-    margin-top: 20px;
+/* Các link social */
+.social-heading {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
 }
 
 .social-item {
-    display: flex;           /* Dùng flex để icon và chữ thẳng hàng */
-    align-items: center;
-    margin-bottom: 15px;
-    font-size: 16px;
+    display: block;         
+    margin-bottom: 12px;
     color: #333;
+    font-size: 15px;
     text-decoration: none;
-    transition: color 0.2s;
 }
 
 .social-item i {
-    width: 30px;             /* Cố định chiều rộng icon */
-    font-size: 20px;         /* Icon to ra một chút cho rõ */
+    width: 25px;            
     color: #555;
-    margin-right: 10px;
+    text-align: center;
 }
 
 .social-item:hover {
-    color: #0056b3;
-    font-weight: bold;       /* Làm đậm chữ khi di chuột vào */
+    color: #0056b3;         
 }
-
 .social-item:hover i {
     color: #0056b3;
 }
 
-/* --- RESPONSIVE MOBILE --- */
+/* --- RESPONSIVE (GIAO DIỆN ĐIỆN THOẠI) --- */
 @media (max-width: 768px) {
-    .bio-container {
-        flex-direction: column; /* Trên điện thoại thì xếp chồng dọc */
+    /* Layout chung */
+    .wrapper {
+        flex-direction: column; 
+    }
+
+    .sidebar {
+        width: 100%; 
+        height: auto; 
+        position: relative; 
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding: 20px;
+        text-align: center; /* Căn giữa nội dung menu trên mobile */
     }
     
-    .bio-right-connect {
-        border-left: none;      /* Bỏ kẻ dọc */
-        border-top: 1px solid #ddd; /* Thay bằng kẻ ngang */
+    .sidebar-footer {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        margin-top: 20px;
+    }
+
+    .content {
+        padding: 30px 20px; 
+    }
+
+    /* Intro Section Mobile */
+    .intro-container {
+        flex-direction: column; 
+        align-items: center;    
+    }
+
+    .intro-avatar {
+        margin-right: 0;
+        margin-bottom: 30px;    
+    }
+    
+    .intro-content {
+        text-align: center; /* Căn giữa chữ trên mobile */
+    }
+
+    /* Biography Section Mobile */
+    .biography-layout {
+        flex-direction: column; 
+    }
+    .bio-right-col {
+        border-left: none;      
+        border-top: 1px solid #ddd; 
         padding-left: 0;
-        padding-top: 30px;
-        margin-top: 30px;
+        padding-top: 20px;
+        margin-top: 20px;
         width: 100%;
     }
 }
