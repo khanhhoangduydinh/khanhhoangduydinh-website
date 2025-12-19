@@ -126,6 +126,14 @@ p.caption + p.caption {
     margin-top: 5px; 
 }
 
+.caption-divider::after {
+    content: ""; /* Tạo một phần tử giả */
+    display: block;
+    width: 60px; /* Độ dài của gạch ngang (bạn có thể thay đổi) */
+    height: 1px; /* Độ dày của gạch ngang */
+    background-color: #777; /* Màu sắc (giống màu chữ caption) */
+    margin: 15px auto 0; /* Căn giữa và tạo khoảng cách phía trên */
+}
 /* Tiêu đề chung */
 .section-title {
     font-size: 22px;
@@ -143,8 +151,8 @@ p.caption + p.caption {
 /* --- CSS RIÊNG CHO TIÊU ĐỀ INTRODUCTION --- */
 .intro-title {
     /* ĐÃ SỬA: Đổi thành border-TOP để kẻ nằm TRÊN chữ như bạn muốn */
-    border-top: 1px solid #333;  
-    border-bottom: none; /* Đảm bảo không có kẻ dưới */
+    border-top: none  
+    border-bottom: 1px solid #333; /* Đảm bảo không có kẻ dưới */
     
     padding-top: 15px;
     margin-bottom: 30px;
@@ -326,6 +334,7 @@ p.caption + p.caption {
         width: 100%;
     }
 }
+
 
 
 
