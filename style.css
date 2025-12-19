@@ -1,64 +1,74 @@
 /* --- 1. CẤU HÌNH CHUNG (RESET) --- */
-/* Dấu * đại diện cho tất cả mọi phần tử trên trang */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Giúp tính toán kích thước padding không làm vỡ khung */
+    box-sizing: border-box; 
 }
 
-/* Thiết lập font chữ và màu sắc cơ bản */
 body {
-    /* Font chữ có chân (Serif) tạo cảm giác học thuật, cổ điển giống mẫu */
     font-family: 'Times New Roman', Times, serif; 
-    font-size: 18px; /* Kích thước chữ vừa phải, dễ đọc */
-    line-height: 1.6; /* Khoảng cách giữa các dòng */
-    color: #333; /* Màu chữ đen xám nhẹ, đỡ mỏi mắt hơn đen tuyền */
-    background-color: #fff; /* Nền trắng */
+    font-size: 18px; 
+    line-height: 1.6; 
+    color: #333; 
+    background-color: #fff; 
 }
 
 a {
-    text-decoration: none; /* Bỏ gạch chân mặc định của link */
-    color: #000; /* Link màu đen */
+    text-decoration: none; 
+    color: #000; 
 }
 
 a:hover {
-    text-decoration: underline; /* Khi di chuột vào thì hiện gạch chân */
-    color: #555; /* Đổi màu nhạt hơn chút */
+    text-decoration: underline; 
+    color: #555; 
 }
 
 /* --- 2. BỐ CỤC CHÍNH (LAYOUT 2 CỘT) --- */
 .wrapper {
-    display: flex; /* Đây là lệnh quan trọng nhất: Xếp 2 phần tử nằm ngang hàng nhau */
-    min-height: 100vh; /* Chiều cao tối thiểu bằng màn hình */
+    display: flex; 
+    min-height: 100vh; 
 }
 
 /* --- 3. CỘT TRÁI (SIDEBAR MENU) --- */
 .sidebar {
-    width: 300px; /* Chiều rộng cố định của cột menu */
-    padding: 40px; /* Khoảng cách từ nội dung đến viền */
-     border-radius: 50%;      /* Bo tròn ảnh thành hình tròn */
-    /* Giữ menu cố định khi cuộn trang */
+    width: 300px; 
+    padding: 40px; 
+    
+    /* ĐÃ SỬA: Xóa bỏ dòng border-radius: 50% ở đây vì nó làm méo menu */
+    
     position: sticky; 
     top: 0;
-    height: 100vh; /* Chiều cao bằng màn hình */
-    
-    border-right: 1px solid #eee; /* Đường kẻ mờ ngăn cách với nội dung (tùy chọn) */
+    height: 100vh; 
+    border-right: 1px solid #eee; 
+}
+
+/* Code bổ sung cho Avatar nhỏ trên menu (nếu chưa có) */
+.sidebar-avatar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Bo tròn chỉ dành cho ảnh */
+    object-fit: cover;
+    margin-bottom: 20px;
+    display: block;     /* Căn giữa ảnh nếu cần */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .site-title {
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 40px; /* Cách menu bên dưới một đoạn */
-    letter-spacing: 1px; /* Khoảng cách giữa các chữ cái rộng ra chút */
-    text-transform: uppercase; /* Viết hoa toàn bộ tên */
+    margin-bottom: 40px; 
+    letter-spacing: 1px; 
+    text-transform: uppercase; 
+    text-align: center; /* Căn giữa tên */
 }
 
 .nav-menu ul {
-    list-style: none; /* Bỏ dấu chấm tròn đầu dòng */
+    list-style: none; 
 }
 
 .nav-menu li {
-    margin-bottom: 12px; /* Khoảng cách giữa các mục menu */
+    margin-bottom: 12px; 
 }
 
 .nav-menu a {
@@ -71,215 +81,126 @@ a:hover {
 }
 
 .sidebar-footer {
-    position: absolute; /* Định vị tuyệt đối */
-    bottom: 40px; /* Nằm sát đáy */
+    position: absolute; 
+    bottom: 40px; 
     font-size: 12px;
     color: #999;
+    left: 40px; /* Căn thẳng hàng với nội dung */
 }
 
 /* --- 4. CỘT PHẢI (NỘI DUNG CHÍNH) --- */
 .content {
-    flex: 1; /* Lệnh này bảo cột nội dung hãy chiếm hết phần khoảng trống còn lại */
-    padding: 60px 80px; /* Khoảng cách lề: Trên/Dưới 60px, Trái/Phải 80px */
-    max-width: 1600px; /* Giới hạn chiều rộng nội dung để dòng chữ không quá dài khó đọc */
+    flex: 1; 
+    padding: 60px 80px; 
+    max-width: 1600px; 
 }
 
-/* Chỉnh ảnh */
 img {
-    max-width: 100%; /* Ảnh không bao giờ to quá khung chứa nó */
-    height: auto; /* Chiều cao tự động theo tỷ lệ */
+    max-width: 100%; 
+    height: auto; 
     display: block;
 }
 
+/* Ảnh bìa (Cover) */
 .hero-image img {
-    /* 1. Đảm bảo ảnh luôn rộng hết mức có thể của cột nội dung */
     width: 100%;
-    height: 400px;        /* Đặt chiều cao cứng (giống bìa Facebook ~312px) */
-                          /* Bạn có thể tăng lên 400px hoặc giảm xuống 300px tùy ý */
+    height: 400px;        
+    
+    /* ĐÃ SỬA: Thêm dòng này để ảnh không bị méo khi set chiều cao cứng */
+    object-fit: cover;     
+    object-position: center 30%; /* Căn chỉnh vị trí hiển thị (đẩy ảnh lên/xuống) */
 }
 
 .caption {
-    font-style: italic; /* Chữ nghiêng cho chú thích ảnh */
+    font-style: italic; 
     font-size: 16px;
     color: #777;
     margin-top: 10px;
     text-align: center;       
-    display: block;           /* Đảm bảo nó là khối để căn giữa hoạt động tốt */
-    line-height: 1.4;  /* Giảm độ cao dòng xuống (mặc định là 1.6) */
-    margin-bottom: 0;  /* Loại bỏ khoảng trống thừa bên dưới mỗi dòng */
+    display: block;           
+    line-height: 1.4;  
+    margin-bottom: 0;  
 }
 
-/* Nếu bạn lỡ dùng 2 thẻ <p class="caption"> riêng biệt, thêm đoạn này để kéo dòng thứ 2 lên */
 p.caption + p.caption {
-    margin-top: 5px; /* Chỉ cách dòng trên 5px thay vì khoảng cách mặc định */
+    margin-top: 5px; 
 }
 
-/* Tiêu đề các phần */
-.intro-text h2, 
+/* Tiêu đề chung */
 .section-title {
     font-size: 22px;
-    font-weight: normal; /* Không in đậm quá mức, giữ nét thanh mảnh */
+    font-weight: normal; 
     margin-bottom: 20px;
-    border-bottom: 1px solid #000; /* Đường gạch chân dài dưới tiêu đề */
+    border-bottom: 1px solid #000; 
     padding-bottom: 10px;
     margin-top: 40px;
 }
 
 .section {
-    margin-bottom: 60px; /* Khoảng cách giữa các section lớn */
+    margin-bottom: 60px; 
 }
 
-/* Bài viết/Dự án */
-.project-item {
-    display: flex; /* Xếp chữ và ảnh nằm ngang */
-    gap: 30px; /* Khoảng cách giữa chữ và ảnh */
-    margin-bottom: 40px;
-}
-
-.project-info {
-    flex: 1; /* Chữ chiếm phần lớn */
-}
-
-.project-info h4 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.project-img {
-    width: 200px; /* Kích thước cố định cho ảnh thumbnail */
-    flex-shrink: 0; /* Không cho ảnh bị co lại */
-}
-
-.divider {
-    border: 0;
-    border-top: 1px solid #eee;
-    margin: 40px 0;
-}
-
-/* --- 5. RESPONSIVE (GIAO DIỆN ĐIỆN THOẠI) --- */
-/* Khi màn hình nhỏ hơn 768px (máy tính bảng và điện thoại) */
-@media (max-width: 768px) {
-    .wrapper {
-        flex-direction: column; /* Đổi từ ngang sang dọc: Menu lên trên, nội dung xuống dưới */
-    }
-
-    .sidebar {
-        width: 100%; /* Menu chiếm hết chiều ngang */
-        height: auto; /* Chiều cao tự do */
-        position: relative; /* Không dính cứng nữa */
-        border-right: none;
-        border-bottom: 1px solid #eee;
-        padding: 20px;
-    }
-    
-    .content {
-        padding: 30px 20px; /* Giảm lề cho đỡ chật trên điện thoại */
-    }
-
-    .project-item {
-        flex-direction: column-reverse; /* Đưa ảnh lên trên hoặc dưới chữ tùy ý */
-    }
-    
-    .project-img {
-        width: 100%; /* Ảnh full màn hình điện thoại */
-        margin-bottom: 2px;
-    }
-}
-
-/* --- BỐ CỤC MỚI CHO PHẦN GIỚI THIỆU (Avatar trái, Nội dung phải) --- */
-
-/* Thẻ bao bọc chính dùng Flexbox để chia cột */
-.intro-container {
-    display: flex;           /* Kích hoạt Flexbox */
-    align-items: flex-start; /* Căn thẳng hàng đầu trang (hoặc center để căn giữa) */
-}
-
-/* Cột bên trái chứa Avatar */
-.intro-avatar {
-    /* XÓA hoặc COMMENT dòng này: flex: 1; */
-    /* flex: 1; */ 
-
-    /* THÊM dòng này: */
-    flex: 0 0 auto; /* Không cho phép hộp giãn ra, chỉ to bằng nội dung bên trong */
-    
-    /* Đảm bảo không có lề phải thừa */
-    margin-right: 20px; /* Bạn có thể chỉnh số này để thay đổi khoảng cách với chữ (ví dụ 10px hoặc 30px) */
-}
-
-/* Trang trí cho ảnh Avatar */
-.intro-avatar img {
-    width: 200px;             /* Ảnh rộng bằng cột chứa nó */
-    height: 200px;            /* Chiều cao tự động theo tỷ lệ */
-    /* border-radius: 10px;  <- Dùng dòng này nếu bạn muốn ảnh góc bo tròn nhẹ thay vì tròn hẳn */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* (Tùy chọn) Thêm bóng mờ nhẹ cho ảnh nổi bật */
-}
-
-/* Cột bên phải chứa nội dung chữ */
-.intro-content {
-    flex: 2;                 /* Chiếm 2 phần không gian (tương đương 2/3) */
-}
-
-/* Điều chỉnh tiêu đề "Giới thiệu" trong bố cục mới */
-.intro-content h2 {
-    margin-top: 0;           /* Bỏ khoảng cách thừa bên trên tiêu đề */
-    /* border-bottom: none; <- Bỏ dòng này nếu bạn không muốn gạch chân dưới chữ "Giới thiệu" nữa */
-}
-
-/* --- RESPONSIVE CHO ĐIỆN THOẠI --- */
-/* Khi xem trên màn hình nhỏ (dưới 768px), chuyển về dạng cột dọc */
-@media (max-width: 768px) {
-    .intro-container {
-        flex-direction: column; /* Xếp chồng lên nhau: Ảnh trên, chữ dưới */
-        align-items: center;    /* Căn giữa ảnh và chữ */
-    }
-
-    .intro-avatar {
-        width: 60%;             /* Ảnh avatar nhỏ lại chút cho vừa mắt trên mobile */
-        min-width: unset;       /* Bỏ giới hạn chiều rộng tối thiểu */
-        margin-bottom: 30px;    /* Thêm khoảng cách với phần chữ bên dưới */
-    }
-}
-
-/* --- CSS CHO TIÊU ĐỀ INTRODUCTION MỚI --- */
+/* --- CSS RIÊNG CHO TIÊU ĐỀ INTRODUCTION --- */
 .intro-title {
-    /* Tạo đường viền nằm PHÍA TRÊN */
-    border-bottom: 1px solid #333;  /* Đường kẻ liền, màu xám đen, dày 2px */
+    /* ĐÃ SỬA: Đổi thành border-TOP để kẻ nằm TRÊN chữ như bạn muốn */
+    border-top: 1px solid #333;  
+    border-bottom: none; /* Đảm bảo không có kẻ dưới */
     
-    /* Tạo khoảng cách để chữ không dính sát vào đường kẻ */
     padding-top: 15px;
-    
-    /* Tạo khoảng cách từ chữ xuống phần nội dung bên dưới */
     margin-bottom: 30px;
     
-    /* Các định dạng chữ (tùy chỉnh theo ý bạn) */
     font-size: 24px;
-    text-transform: uppercase; /* Chữ in hoa */
-    font-weight: normal;       /* Giữ nét chữ thanh mảnh */
+    text-transform: uppercase; 
+    font-weight: normal;       
 }
 
-/* --- CSS SỬA LỖI BỐ CỤC BIOGRAPHY --- */
+/* --- BỐ CỤC PHẦN GIỚI THIỆU (Avatar trái, Nội dung phải) --- */
+.intro-container {
+    display: flex;           
+    align-items: flex-start; 
+}
 
-/* 1. Thiết lập hộp chứa dàn hàng ngang */
+.intro-avatar {
+    flex: 0 0 auto; 
+    margin-right: 40px; /* Tăng khoảng cách ra chút cho thoáng (cũ là 20px) */
+}
+
+.intro-avatar img {
+    width: 200px;           
+    height: 200px;           
+    border-radius: 50%;      /* Bo tròn ảnh Introduction */
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+}
+
+.intro-content {
+    flex: 2;                 
+}
+
+.intro-content p {
+    margin-bottom: 10px; /* Khoảng cách giữa các dòng thông tin */
+}
+
+/* --- CSS BỐ CỤC BIOGRAPHY (2 CỘT: CHỮ & SOCIAL) --- */
 .biography-layout {
-    display: flex;          /* Quan trọng: Kích hoạt chế độ nằm ngang */
-    gap: 40px;              /* Khoảng cách giữa cột chữ và cột icon */
-    align-items: flex-start; /* Căn hàng bắt đầu từ trên cùng */
+    display: flex;          
+    gap: 40px;              
+    align-items: flex-start; 
 }
 
-/* 2. Cột bên trái (Văn bản) */
 .bio-left-col {
-    flex: 3;                /* Chiếm 3 phần (khoảng 75%) chiều rộng */
+    flex: 3;                
 }
+
 .bio-left-col p {
     margin-bottom: 20px;
-    text-align: justify;    /* Căn đều 2 bên cho đẹp */
+    text-align: justify;    
 }
 
-/* 3. Cột bên phải (Social) */
 .bio-right-col {
-    flex: 1;                /* Chiếm 1 phần (khoảng 25%) chiều rộng */
-    border-left: 2px solid #ddd; /* Đường kẻ dọc màu xám */
-    padding-left: 25px;     /* Khoảng cách từ đường kẻ đến chữ */
+    flex: 1;                
+    border-left: 2px solid #ddd; 
+    padding-left: 25px;     
 }
 
 /* Các link social */
@@ -292,7 +213,7 @@ p.caption + p.caption {
 }
 
 .social-item {
-    display: block;         /* Mỗi link nằm trên 1 dòng */
+    display: block;         
     margin-bottom: 12px;
     color: #333;
     font-size: 15px;
@@ -300,43 +221,71 @@ p.caption + p.caption {
 }
 
 .social-item i {
-    width: 25px;            /* Cố định chiều rộng icon để chữ thẳng hàng */
+    width: 25px;            
     color: #555;
+    text-align: center;
 }
 
 .social-item:hover {
-    color: #0056b3;         /* Đổi màu xanh khi di chuột vào */
+    color: #0056b3;         
 }
 .social-item:hover i {
     color: #0056b3;
 }
 
-/* --- RESPONSIVE MOBILE (Khi màn hình nhỏ) --- */
+/* --- RESPONSIVE (GIAO DIỆN ĐIỆN THOẠI) --- */
 @media (max-width: 768px) {
+    /* Layout chung */
+    .wrapper {
+        flex-direction: column; 
+    }
+
+    .sidebar {
+        width: 100%; 
+        height: auto; 
+        position: relative; 
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding: 20px;
+        text-align: center; /* Căn giữa nội dung menu trên mobile */
+    }
+    
+    .sidebar-footer {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        margin-top: 20px;
+    }
+
+    .content {
+        padding: 30px 20px; 
+    }
+
+    /* Intro Section Mobile */
+    .intro-container {
+        flex-direction: column; 
+        align-items: center;    
+    }
+
+    .intro-avatar {
+        margin-right: 0;
+        margin-bottom: 30px;    
+    }
+    
+    .intro-content {
+        text-align: center; /* Căn giữa chữ trên mobile */
+    }
+
+    /* Biography Section Mobile */
     .biography-layout {
-        flex-direction: column; /* Quay lại xếp chồng dọc trên điện thoại */
+        flex-direction: column; 
     }
     .bio-right-col {
-        border-left: none;      /* Bỏ kẻ dọc */
-        border-top: 1px solid #ddd; /* Thêm kẻ ngang */
+        border-left: none;      
+        border-top: 1px solid #ddd; 
         padding-left: 0;
         padding-top: 20px;
         margin-top: 20px;
         width: 100%;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
