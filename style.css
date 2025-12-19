@@ -218,10 +218,21 @@ p.caption + p.caption {
 }
 
 /* --- CHỈNH SỬA TIÊU ĐỀ KHI NẰM TRONG CỘT --- */
-.bio-title-fix {
-    margin-top: 0 !important; /* Bỏ khoảng trống thừa phía trên tiêu đề */
-    width: 100%;              /* Kẻ gạch chân chạy hết chiều rộng cột */
-    font-size: 22px;          /* Đảm bảo cỡ chữ 2 bên bằng nhau */
+.bio-col-title {
+    font-size: 20px !important;      /* Kích thước chữ thống nhất */
+    font-weight: normal !important;  /* QUAN TRỌNG: Bỏ in đậm để giống bên phải */
+    text-transform: none !important; /* Giữ chữ thường/hoa đúng như bạn gõ */
+    color: #333 !important;
+    
+    /* Đường kẻ dưới chân */
+    border-bottom: 1px solid #000;   
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    
+    /* Căn lề trên */
+    margin-top: 0 !important; 
+    line-height: 1.4;
+    font-family: 'Times New Roman', Times, serif; /* Đảm bảo cùng font */
 }
 
 /* --- DANH SÁCH LINK --- */
@@ -320,6 +331,7 @@ p.caption + p.caption {
         width: 100%;
     }
 }
+
 
 
 
