@@ -274,15 +274,73 @@ p.caption + p.caption {
     text-align: justify;       
 }
 
-/* (Tùy chọn) Làm chữ cái đầu tiên của đoạn đầu to lên (Drop Cap) cho nghệ thuật */
-/* .bio-text p:first-child::first-letter {
-    font-size: 3.5em;
-    float: left;
-    margin-right: 10px;
-    line-height: 0.8;
-} */
+/* --- CSS CHO CỘT MẠNG XÃ HỘI BÊN PHẢI --- */
 
+/* 1. Biến cột nội dung chính thành một Flex container để chia đôi */
+.intro-content {
+    display: flex;           /* Xếp 2 cột con nằm ngang */
+    gap: 40px;               /* Khoảng cách giữa cột chữ và cột mạng xã hội */
+}
 
+/* 2. Cột chứa văn bản Biography */
+.bio-text-column {
+    flex: 3;                 /* Chiếm phần lớn không gian (3/4) */
+}
+
+/* 3. Cột chứa Mạng xã hội (Có đường kẻ dọc) */
+.social-column {
+    flex: 1;                 /* Chiếm phần nhỏ hơn (1/4) */
+    border-left: 2px solid #eee; /* TẠO ĐƯỜNG KẺ DỌC MÀU XÁM NHẠT */
+    padding-left: 30px;      /* Khoảng cách từ đường kẻ đến nội dung bên trong */
+}
+
+/* Tiêu đề "Kết nối" */
+.social-heading {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Các liên kết mạng xã hội */
+.social-item {
+    display: flex;           /* Để icon và chữ nằm thẳng hàng đẹp mắt */
+    align-items: center;
+    margin-bottom: 15px;     /* Khoảng cách giữa các link */
+    color: #555;             /* Màu chữ xám tối */
+    font-size: 16px;
+    text-decoration: none;   /* Bỏ gạch chân mặc định */
+    transition: color 0.3s;  /* Hiệu ứng chuyển màu mượt mà */
+}
+
+/* Icon bên trong link */
+.social-item i {
+    font-size: 20px;         /* Kích thước icon */
+    margin-right: 12px;      /* Khoảng cách giữa icon và chữ */
+    width: 25px;             /* Cố định chiều rộng để các dòng thẳng hàng */
+    text-align: center;
+}
+
+/* Hiệu ứng khi di chuột vào link */
+.social-item:hover {
+    color: #000;             /* Đổi màu đen đậm khi hover */
+}
+
+/* --- RESPONSIVE CHO ĐIỆN THOẠI --- */
+@media (max-width: 768px) {
+    /* Trên điện thoại, xếp chồng lên nhau lại */
+    .intro-content {
+        flex-direction: column;
+    }
+    
+    .social-column {
+        border-left: none;       /* Bỏ đường kẻ dọc */
+        border-top: 2px solid #eee; /* Thay bằng đường kẻ ngang bên trên */
+        padding-left: 0;
+        padding-top: 30px;
+        margin-top: 30px;
+    }
+}
 
 
 
