@@ -257,90 +257,75 @@ p.caption + p.caption {
     font-weight: normal;       /* Giữ nét chữ thanh mảnh */
 }
 
-/* --- CSS CHO PHẦN BIOGRAPHY VĂN XUÔI --- */
+/* --- CSS SỬA LỖI BỐ CỤC BIOGRAPHY --- */
 
-.bio-text {
-    /* Giới hạn độ rộng để mắt người đọc không bị mỏi khi dòng quá dài */
-    max-width: 800px; 
+/* 1. Thiết lập hộp chứa dàn hàng ngang */
+.biography-layout {
+    display: flex;          /* Quan trọng: Kích hoạt chế độ nằm ngang */
+    gap: 40px;              /* Khoảng cách giữa cột chữ và cột icon */
+    align-items: flex-start; /* Căn hàng bắt đầu từ trên cùng */
 }
 
-.bio-text p {
-    margin-bottom: 25px;       /* Khoảng cách giữa các đoạn văn */
-    font-size: 18px;           /* Kích thước chữ dễ đọc */
-    line-height: 1.8;          /* Khoảng cách dòng thoáng hơn chút so với mặc định */
-    color: #333;               /* Màu chữ đen xám dịu mắt */
-    
-    /* Tùy chọn: Căn đều 2 bên lề cho giống trang sách/báo */
-    text-align: justify;       
+/* 2. Cột bên trái (Văn bản) */
+.bio-left-col {
+    flex: 3;                /* Chiếm 3 phần (khoảng 75%) chiều rộng */
 }
-
-/* --- CSS CHO CỘT MẠNG XÃ HỘI BÊN PHẢI --- */
-
-/* 1. Biến cột nội dung chính thành một Flex container để chia đôi */
-.intro-content {
-    display: flex;           /* Xếp 2 cột con nằm ngang */
-    gap: 40px;               /* Khoảng cách giữa cột chữ và cột mạng xã hội */
-}
-
-/* 2. Cột chứa văn bản Biography */
-.bio-text-column {
-    flex: 3;                 /* Chiếm phần lớn không gian (3/4) */
-}
-
-/* 3. Cột chứa Mạng xã hội (Có đường kẻ dọc) */
-.social-column {
-    flex: 1;                 /* Chiếm phần nhỏ hơn (1/4) */
-    border-left: 2px solid #eee; /* TẠO ĐƯỜNG KẺ DỌC MÀU XÁM NHẠT */
-    padding-left: 30px;      /* Khoảng cách từ đường kẻ đến nội dung bên trong */
-}
-
-/* Tiêu đề "Kết nối" */
-.social-heading {
-    font-size: 16px;
-    text-transform: uppercase;
+.bio-left-col p {
     margin-bottom: 20px;
-    color: #333;
+    text-align: justify;    /* Căn đều 2 bên cho đẹp */
 }
 
-/* Các liên kết mạng xã hội */
+/* 3. Cột bên phải (Social) */
+.bio-right-col {
+    flex: 1;                /* Chiếm 1 phần (khoảng 25%) chiều rộng */
+    border-left: 2px solid #ddd; /* Đường kẻ dọc màu xám */
+    padding-left: 25px;     /* Khoảng cách từ đường kẻ đến chữ */
+}
+
+/* Các link social */
+.social-heading {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
 .social-item {
-    display: flex;           /* Để icon và chữ nằm thẳng hàng đẹp mắt */
-    align-items: center;
-    margin-bottom: 15px;     /* Khoảng cách giữa các link */
-    color: #555;             /* Màu chữ xám tối */
-    font-size: 16px;
-    text-decoration: none;   /* Bỏ gạch chân mặc định */
-    transition: color 0.3s;  /* Hiệu ứng chuyển màu mượt mà */
+    display: block;         /* Mỗi link nằm trên 1 dòng */
+    margin-bottom: 12px;
+    color: #333;
+    font-size: 15px;
+    text-decoration: none;
 }
 
-/* Icon bên trong link */
 .social-item i {
-    font-size: 20px;         /* Kích thước icon */
-    margin-right: 12px;      /* Khoảng cách giữa icon và chữ */
-    width: 25px;             /* Cố định chiều rộng để các dòng thẳng hàng */
-    text-align: center;
+    width: 25px;            /* Cố định chiều rộng icon để chữ thẳng hàng */
+    color: #555;
 }
 
-/* Hiệu ứng khi di chuột vào link */
 .social-item:hover {
-    color: #000;             /* Đổi màu đen đậm khi hover */
+    color: #0056b3;         /* Đổi màu xanh khi di chuột vào */
+}
+.social-item:hover i {
+    color: #0056b3;
 }
 
-/* --- RESPONSIVE CHO ĐIỆN THOẠI --- */
+/* --- RESPONSIVE MOBILE (Khi màn hình nhỏ) --- */
 @media (max-width: 768px) {
-    /* Trên điện thoại, xếp chồng lên nhau lại */
-    .intro-content {
-        flex-direction: column;
+    .biography-layout {
+        flex-direction: column; /* Quay lại xếp chồng dọc trên điện thoại */
     }
-    
-    .social-column {
-        border-left: none;       /* Bỏ đường kẻ dọc */
-        border-top: 2px solid #eee; /* Thay bằng đường kẻ ngang bên trên */
+    .bio-right-col {
+        border-left: none;      /* Bỏ kẻ dọc */
+        border-top: 1px solid #ddd; /* Thêm kẻ ngang */
         padding-left: 0;
-        padding-top: 30px;
-        margin-top: 30px;
+        padding-top: 20px;
+        margin-top: 20px;
+        width: 100%;
     }
 }
+
 
 
 
