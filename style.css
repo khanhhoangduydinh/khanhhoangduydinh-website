@@ -238,7 +238,7 @@ img {
 /* --- CSS CHO TIÊU ĐỀ INTRODUCTION MỚI --- */
 .intro-title {
     /* Tạo đường viền nằm PHÍA TRÊN */
-    border-top: 2px solid #333;  /* Đường kẻ liền, màu xám đen, dày 2px */
+    border-bottom: 1px solid #333;  /* Đường kẻ liền, màu xám đen, dày 2px */
     
     /* Tạo khoảng cách để chữ không dính sát vào đường kẻ */
     padding-top: 15px;
@@ -251,6 +251,7 @@ img {
     text-transform: uppercase; /* Chữ in hoa */
     font-weight: normal;       /* Giữ nét chữ thanh mảnh */
 }
+
 
 
 
