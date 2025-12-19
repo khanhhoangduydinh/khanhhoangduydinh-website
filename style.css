@@ -200,7 +200,8 @@ p.caption + p.caption {
 .bio-right-col {
     flex: 1;                
     border-left: 2px solid #ddd; 
-    padding-left: 25px;     
+    padding-left: 30px; 
+    padding-bottom: 20px;
 }
 
 /* Các link social */
@@ -289,4 +290,5 @@ p.caption + p.caption {
         width: 100%;
     }
 }
+
 
