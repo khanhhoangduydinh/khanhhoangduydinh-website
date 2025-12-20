@@ -171,7 +171,7 @@
 
                 <div class="awards-layout">
 
-                    <div class="awards-list" id="awards-list-auto">
+                    <div class="awards-list" id="certi-list-auto">
                         
                         <div class="award-item">
                             <div class="award-number-box"></div> <div class="award-content-box">
@@ -282,20 +282,33 @@
     </div>
 
     <script>
-        const awardsContainer = document.getElementById('awards-list-auto');
-        if (awardsContainer) {
-            const items = awardsContainer.querySelectorAll('.award-item');
+    // Hàm dùng chung để đánh số thứ tự cho bất kỳ danh sách nào
+    function autoNumberList(containerId) {
+        const container = document.getElementById(containerId);
+        
+        if (container) {
+            const items = container.querySelectorAll('.award-item');
+            
             items.forEach((item, index) => {
-                const number = index + 1; // Đếm xuôi 1, 2, 3
+                const number = index + 1; // Đếm xuôi 1, 2, 3...
+                
                 const numberBox = item.querySelector('.award-number-box');
                 if (numberBox) {
                     numberBox.textContent = `${number}.`;
                 }
             });
         }
+    }
+
+    // Gọi hàm chạy cho mục Awards
+    autoNumberList('awards-list-auto');
+
+    // Gọi hàm chạy cho mục Certifications (ID mới vừa đổi)
+    autoNumberList('certi-list-auto');
     </script>
 </body>
 </html>
+
 
 
 
