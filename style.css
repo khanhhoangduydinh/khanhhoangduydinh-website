@@ -394,104 +394,88 @@ p.caption + p.caption {
     }
 }
 
-/* --- CSS CHO ADVISOR (Căn thẳng hàng tên) --- */
-.advisor-wrapper {
-    display: flex;              /* Xếp ngang 2 khối (Nhãn và Tên) */
-    align-items: flex-start;    /* Căn hàng từ mép trên */
-}
-
-.advisor-label {
-    white-space: nowrap;        /* Không cho chữ Advisor bị ngắt dòng */
-    margin-right: 5px;          /* Khoảng cách nhỏ giữa Advisor: và Tên */
-    /* font-weight: bold; */    /* Bỏ comment nếu muốn chữ Advisor in đậm */
-}
-
-.advisor-names div {
-    margin-bottom: 2px;         /* Khoảng cách thoáng giữa 2 cái tên */
-}
-
-/* --- CSS GIAO DIỆN BÀI BÁO MỚI (Modern Style) --- */
+/* --- CSS PUBLICATIONS MỚI (Căn thẳng hàng & Ô vuông) --- */
 
 .pub-item-modern {
-    margin-bottom: 35px; /* Khoảng cách giữa các bài thoáng hơn */
-    font-family: 'Times New Roman', Times, serif; /* Giữ font chữ trang trọng */
+    display: flex;          /* Chia làm 2 cột: Số bên trái, Nội dung bên phải */
+    gap: 15px;              /* Khoảng cách giữa Số và Nội dung */
+    margin-bottom: 30px;    /* Khoảng cách giữa các bài báo */
+    align-items: flex-start; /* Căn hàng từ mép trên cùng */
 }
 
-/* 1. Tiêu đề bài báo */
+/* CỘT 1: SỐ THỨ TỰ (C...) */
+.pub-number-box {
+    flex: 0 0 40px;         /* Chiếm cứng 40px, không co giãn */
+    font-weight: bold;
+    color: #2a7bbd;         /* Màu xanh dương */
+    font-size: 18px;
+    padding-top: 2px;       /* Chỉnh nhẹ để ngang hàng với Title */
+    text-align: right;      /* Căn số sang phải cho đẹp */
+}
+
+/* CỘT 2: KHỐI NỘI DUNG */
+.pub-content-box {
+    flex: 1;                /* Chiếm hết phần còn lại */
+    /* Mọi thứ trong này sẽ tự động thẳng hàng với nhau */
+}
+
+/* Tiêu đề */
 .pub-title {
+    margin: 0 0 5px 0;      /* Reset margin */
     font-size: 20px;
-    margin-bottom: 5px;
-    line-height: 1.4;
-    font-weight: normal; /* Không cần quá đậm vì màu xanh đã nổi bật */
+    line-height: 1.3;
 }
 
 .pub-title a {
-    color: #2a7bbd; /* Màu xanh dương sáng giống trong ảnh */
+    color: #2a7bbd;
     text-decoration: none;
     font-weight: bold;
 }
 
 .pub-title a:hover {
     text-decoration: underline;
-    color: #1a5b8d; /* Màu đậm hơn khi di chuột vào */
 }
 
-.pub-number {
-    color: #2a7bbd;
-    font-weight: bold;
-    margin-right: 5px;
-}
-
-/* 2. Tác giả */
-.pub-authors {
+/* Thông tin Tác giả & Venue */
+.pub-authors, .pub-venue {
+    font-size: 18px;
     color: #333;
-    font-size: 18px;
-    margin-bottom: 4px;
-}
-
-/* 3. Hội nghị & Highlight */
-.pub-venue {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 10px; /* Khoảng cách xuống hàng nút bấm */
-}
-
-.pub-venue i {
-    font-style: italic;
+    margin-bottom: 5px;
+    line-height: 1.5;
 }
 
 .highlight-red {
-    color: #d93025; /* Màu đỏ nổi bật cho chữ Spotlight */
+    color: #d93025;
     font-weight: bold;
     font-style: italic;
 }
 
-/* 4. Các nút bấm hình chữ nhật (Box Buttons) */
+/* --- NÚT BẤM Ô VUÔNG (SQUARE BUTTONS) --- */
 .pub-buttons-group {
+    margin-top: 8px;
     display: flex;
-    gap: 10px; /* Khoảng cách giữa các nút */
+    gap: 10px;
 }
 
-.btn-rect {
+.btn-square {
     display: inline-block;
-    padding: 2px 10px;      /* Độ rộng của nút */
-    border: 1px solid #333; /* Viền đen mỏng */
-    color: #000;            /* Chữ đen */
+    padding: 3px 10px;          /* Độ rộng nút */
+    border: 1px solid #333;     /* Viền đen tạo hình ô vuông */
+    color: #333;
     text-decoration: none;
-    font-size: 14px;        /* Chữ trong nút nhỏ gọn */
-    font-family: Arial, sans-serif; /* Dùng font không chân cho nút dễ đọc */
-    border-radius: 2px;     /* Bo góc rất nhẹ */
-    transition: all 0.2s;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    transition: all 0.2s ease;
     background-color: transparent;
 }
 
-.btn-rect:hover {
-    background-color: #333; /* Khi di chuột vào thì nền đen */
-    color: #fff;            /* Chữ trắng */
+.btn-square:hover {
+    background-color: #333;     /* Hover vào nền đen */
+    color: #fff;                /* Chữ trắng */
+    border-color: #333;
     text-decoration: none;
 }
-
-
 
 
 
