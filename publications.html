@@ -39,7 +39,7 @@
             <section class="section">
                 <h2 class="section-title"><b>COMPETITIONS</b></h2>
             
-                <div id="conference-list">
+                <div id="competition-list">
             
                     <div class="pub-item-modern">
                         <div class="pub-number-box"></div>
@@ -279,27 +279,36 @@
     </div>
 
     <script>
-        const listContainer = document.getElementById('conference-list');
+    // Hàm dùng chung để đánh số tự động
+    function autoNumberList(containerId) {
+        const container = document.getElementById(containerId);
         
-        if (listContainer) {
-            // Lấy danh sách bài báo
-            const items = listContainer.querySelectorAll('.pub-item-modern');
-    
+        if (container) {
+            // Lấy tất cả các item trong container đó
+            const items = container.querySelectorAll('.pub-item-modern');
+
             items.forEach((item, index) => {
-                // Đếm xuôi: Bắt đầu từ 1, 2, 3...
+                // Đếm xuôi: 1, 2, 3...
                 const number = index + 1; 
                 
-                // Tìm ô chứa số để điền vào
+                // Tìm ô số và điền vào
                 const numberBox = item.querySelector('.pub-number-box');
                 if (numberBox) {
-                    // Điền số vào (Ví dụ: 1.)
                     numberBox.textContent = `${number}.`; 
                 }
             });
         }
+    }
+
+    // 1. Gọi hàm chạy cho danh sách COMPETITIONS
+    autoNumberList('competition-list');
+
+    // 2. Gọi hàm chạy cho danh sách CONFERENCE PROCEEDINGS
+    autoNumberList('conference-list');
     </script>
 </body>
 </html>
+
 
 
 
