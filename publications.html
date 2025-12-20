@@ -95,33 +95,28 @@
     </div>
 
     <script>
-        // 1. Tìm khu vực chứa danh sách bài báo
         const listContainer = document.getElementById('conference-list');
         
         if (listContainer) {
-            // 2. Lấy tất cả các bài báo bên trong (class pub-item)
-            const items = listContainer.querySelectorAll('.pub-item');
-            const totalItems = items.length; // Đếm tổng số bài (ví dụ: 20)
-
-            // 3. Chạy vòng lặp để điền số
+            // Lấy danh sách bài báo
+            const items = listContainer.querySelectorAll('.pub-item-modern');
+    
             items.forEach((item, index) => {
-                // Công thức giảm dần: Số thứ tự = Tổng - Vị trí hiện tại
-                // Ví dụ: Bài đầu tiên (index 0) => 20 - 0 = 20
-                const number = totalItems - index; 
+                // Đếm xuôi: Bắt đầu từ 1, 2, 3...
+                const number = index + 1; 
                 
-                // 4. Điền vào div class="pub-index"
-                const indexDiv = item.querySelector('.pub-index');
-                if (indexDiv) {
-                    indexDiv.innerHTML = `<strong>[C${number}]</strong>`;
+                // Tìm ô chứa số để điền vào
+                const numberBox = item.querySelector('.pub-number-box');
+                if (numberBox) {
+                    // Điền số vào (Ví dụ: 1.)
+                    numberBox.textContent = `${number}.`; 
                 }
             });
         }
     </script>
+</body>
+</html>
 
-</body>
-</html>
-</body>
-</html>
 
 
 
