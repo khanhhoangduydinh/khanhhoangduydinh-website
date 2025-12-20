@@ -405,12 +405,13 @@ p.caption + p.caption {
 
 /* CỘT 1: SỐ THỨ TỰ (C...) */
 .pub-number-box {
-    flex: 0 0 40px;         /* Chiếm cứng 40px, không co giãn */
+    flex: 0 0 30px;         /* Chiếm cứng 30px chiều rộng */
     font-weight: bold;
-    color: #2a7bbd;         /* Màu xanh dương */
-    font-size: 18px;
-    padding-top: 2px;       /* Chỉnh nhẹ để ngang hàng với Title */
-    text-align: right;      /* Căn số sang phải cho đẹp */
+    color: #2a7bbd;         /* Màu xanh */
+    font-size: 20px;        /* Cỡ chữ bằng với Title để thẳng hàng */
+    padding-top: 0;         
+    text-align: right;      /* Căn phải để số sát vào nội dung */
+    line-height: 1.3;       /* Khớp dòng với tiêu đề bên phải */
 }
 
 /* CỘT 2: KHỐI NỘI DUNG */
@@ -476,6 +477,7 @@ p.caption + p.caption {
     border-color: #333;
     text-decoration: none;
 }
+
 
 
 
