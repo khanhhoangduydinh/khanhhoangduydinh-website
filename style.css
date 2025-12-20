@@ -410,6 +410,75 @@ p.caption + p.caption {
     margin-bottom: 2px;         /* Khoảng cách thoáng giữa 2 cái tên */
 }
 
+/* --- CSS CHO TRANG PUBLICATIONS --- */
+
+/* Highlight menu đang chọn */
+.active-menu {
+    font-weight: bold;
+    color: #000 !important;
+    text-decoration: underline;
+}
+
+/* 1. Item bài báo: Dùng Flexbox để chia cột Index và Nội dung */
+.pub-item {
+    display: flex;
+    align-items: flex-start; /* Căn hàng từ trên cùng */
+    margin-bottom: 25px;     /* Khoảng cách giữa các bài báo */
+    font-size: 18px;         /* Kích thước chữ chuẩn */
+    color: #000;
+}
+
+/* 2. Cột số thứ tự [C20] */
+.pub-index {
+    flex: 0 0 60px; /* Chiếm cố định 60px chiều rộng, không co giãn */
+    font-weight: bold;
+    color: #000;
+}
+
+/* 3. Cột nội dung bài báo */
+.pub-content {
+    flex: 1; /* Chiếm hết phần còn lại */
+    text-align: justify; /* Căn đều 2 bên cho đẹp */
+    line-height: 1.5;
+}
+
+/* Định dạng tên tác giả, hội nghị (Dùng thẻ strong, i trong HTML) */
+.pub-content strong {
+    font-weight: bold;
+}
+
+.pub-content i {
+    font-style: italic;
+}
+
+/* 4. Các đường link [paper], [code]... */
+.pub-links a {
+    color: #0000EE; /* Màu xanh dương chuẩn link (hoặc #0645AD) */
+    text-decoration: none;
+    margin-left: 3px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.pub-links a:hover {
+    text-decoration: underline;
+}
+
+/* 5. Ghi chú nhỏ (c: co-PI...) */
+.pub-note {
+    font-size: 16px; /* Nhỏ hơn chữ chính 1 chút */
+    margin-top: 4px;
+    color: #333;
+}
+
+/* --- Responsive cho Mobile --- */
+@media (max-width: 768px) {
+    .pub-item {
+        flex-direction: column; /* Trên điện thoại thì xếp dọc */
+    }
+    .pub-index {
+        margin-bottom: 5px;
+    }
+}
 
 
 
