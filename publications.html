@@ -41,7 +41,7 @@
                 <h2 class="section-title">Conference Proceedings</h2>
 
                 <div class="pub-item">
-                    <div class="pub-index"><strong>[C20]</strong></div>
+                    <div class="pub-index"></div>
                     <div class="pub-content">
                         <span>Duy Do, <strong>Truong-Son Hy</strong><sup>c</sup>, and Thang Dinh,</span>
                         
@@ -58,7 +58,7 @@
                 </div>
 
                 <div class="pub-item">
-                    <div class="pub-index"><strong>[C19]</strong></div>
+                    <div class="pub-index"></div>
                     <div class="pub-content">
                         <span>Tan-Hanh Pham, Hoang-Nam Le, Phu-Vinh Nguyen, Chris Ngo, and <strong>Truong-Son Hy</strong><sup>c</sup>,</span>
                         
@@ -79,8 +79,36 @@
             <div style="height: 50px;"></div> 
          </main>
     </div>
+
+    <script>
+        // 1. Tìm khu vực chứa danh sách bài báo
+        const listContainer = document.getElementById('conference-list');
+        
+        if (listContainer) {
+            // 2. Lấy tất cả các bài báo bên trong (class pub-item)
+            const items = listContainer.querySelectorAll('.pub-item');
+            const totalItems = items.length; // Đếm tổng số bài (ví dụ: 20)
+
+            // 3. Chạy vòng lặp để điền số
+            items.forEach((item, index) => {
+                // Công thức giảm dần: Số thứ tự = Tổng - Vị trí hiện tại
+                // Ví dụ: Bài đầu tiên (index 0) => 20 - 0 = 20
+                const number = totalItems - index; 
+                
+                // 4. Điền vào div class="pub-index"
+                const indexDiv = item.querySelector('.pub-index');
+                if (indexDiv) {
+                    indexDiv.innerHTML = `<strong>[C${number}]</strong>`;
+                }
+            });
+        }
+    </script>
+
 </body>
 </html>
+</body>
+</html>
+
 
 
 
