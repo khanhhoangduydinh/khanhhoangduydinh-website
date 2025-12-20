@@ -410,74 +410,85 @@ p.caption + p.caption {
     margin-bottom: 2px;         /* Khoảng cách thoáng giữa 2 cái tên */
 }
 
-/* --- CSS CHO TRANG PUBLICATIONS --- */
+/* --- CSS GIAO DIỆN BÀI BÁO MỚI (Modern Style) --- */
 
-/* Highlight menu đang chọn */
-.active-menu {
+.pub-item-modern {
+    margin-bottom: 35px; /* Khoảng cách giữa các bài thoáng hơn */
+    font-family: 'Times New Roman', Times, serif; /* Giữ font chữ trang trọng */
+}
+
+/* 1. Tiêu đề bài báo */
+.pub-title {
+    font-size: 20px;
+    margin-bottom: 5px;
+    line-height: 1.4;
+    font-weight: normal; /* Không cần quá đậm vì màu xanh đã nổi bật */
+}
+
+.pub-title a {
+    color: #2a7bbd; /* Màu xanh dương sáng giống trong ảnh */
+    text-decoration: none;
     font-weight: bold;
-    color: #000 !important;
+}
+
+.pub-title a:hover {
     text-decoration: underline;
+    color: #1a5b8d; /* Màu đậm hơn khi di chuột vào */
 }
 
-/* 1. Item bài báo: Dùng Flexbox để chia cột Index và Nội dung */
-.pub-item {
-    display: flex;
-    align-items: flex-start; /* Căn hàng từ trên cùng */
-    margin-bottom: 25px;     /* Khoảng cách giữa các bài báo */
-    font-size: 18px;         /* Kích thước chữ chuẩn */
-    color: #000;
-}
-
-/* 2. Cột số thứ tự [C20] */
-.pub-index {
-    flex: 0 0 60px; /* Chiếm cố định 60px chiều rộng, không co giãn */
+.pub-number {
+    color: #2a7bbd;
     font-weight: bold;
-    color: #000;
+    margin-right: 5px;
 }
 
-/* 3. Cột nội dung bài báo */
-.pub-content {
-    flex: 1; /* Chiếm hết phần còn lại */
-    text-align: justify; /* Căn đều 2 bên cho đẹp */
-    line-height: 1.5;
+/* 2. Tác giả */
+.pub-authors {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 4px;
 }
 
-/* Định dạng tên tác giả, hội nghị (Dùng thẻ strong, i trong HTML) */
-.pub-content strong {
-    font-weight: bold;
+/* 3. Hội nghị & Highlight */
+.pub-venue {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px; /* Khoảng cách xuống hàng nút bấm */
 }
 
-.pub-content i {
+.pub-venue i {
     font-style: italic;
 }
 
-/* 4. Các đường link [paper], [code]... */
-.pub-links a {
-    color: #0000EE; /* Màu xanh dương chuẩn link (hoặc #0645AD) */
+.highlight-red {
+    color: #d93025; /* Màu đỏ nổi bật cho chữ Spotlight */
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* 4. Các nút bấm hình chữ nhật (Box Buttons) */
+.pub-buttons-group {
+    display: flex;
+    gap: 10px; /* Khoảng cách giữa các nút */
+}
+
+.btn-rect {
+    display: inline-block;
+    padding: 2px 10px;      /* Độ rộng của nút */
+    border: 1px solid #333; /* Viền đen mỏng */
+    color: #000;            /* Chữ đen */
     text-decoration: none;
-    margin-left: 3px;
-    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;        /* Chữ trong nút nhỏ gọn */
+    font-family: Arial, sans-serif; /* Dùng font không chân cho nút dễ đọc */
+    border-radius: 2px;     /* Bo góc rất nhẹ */
+    transition: all 0.2s;
+    background-color: transparent;
 }
 
-.pub-links a:hover {
-    text-decoration: underline;
-}
-
-/* 5. Ghi chú nhỏ (c: co-PI...) */
-.pub-note {
-    font-size: 16px; /* Nhỏ hơn chữ chính 1 chút */
-    margin-top: 4px;
-    color: #333;
-}
-
-/* --- Responsive cho Mobile --- */
-@media (max-width: 768px) {
-    .pub-item {
-        flex-direction: column; /* Trên điện thoại thì xếp dọc */
-    }
-    .pub-index {
-        margin-bottom: 5px;
-    }
+.btn-rect:hover {
+    background-color: #333; /* Khi di chuột vào thì nền đen */
+    color: #fff;            /* Chữ trắng */
+    text-decoration: none;
 }
 
 
