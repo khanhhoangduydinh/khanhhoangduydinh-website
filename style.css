@@ -478,6 +478,108 @@ p.caption + p.caption {
     text-decoration: none;
 }
 
+/* --- CSS CHO TRANG AWARDS (Chia cột) --- */
+
+/* 1. Khung bao quanh để chia 2 phần */
+.awards-layout {
+    display: flex;
+    gap: 40px;              /* Khoảng cách giữa 2 cột lớn */
+    align-items: flex-start; /* Căn hàng từ mép trên */
+}
+
+/* 2. Cột trái: Danh sách giải thưởng (Chiếm phần lớn) */
+.awards-list {
+    flex: 2; /* Chiếm 2 phần không gian (khoảng 66%) */
+}
+
+/* Style cho từng mục giải thưởng (giống Publications) */
+.award-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    align-items: flex-start;
+}
+
+.award-number-box {
+    flex: 0 0 30px;
+    font-weight: bold;
+    color: #2a7bbd; /* Màu xanh đồng bộ */
+    font-size: 18px;
+    text-align: right;
+    padding-top: 2px;
+}
+
+.award-content-box {
+    flex: 1;
+}
+
+.award-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.award-desc {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.award-date {
+    font-size: 14px;
+    font-style: italic;
+    color: #666;
+}
+
+/* 3. Cột phải: Gallery ảnh (Chiếm phần nhỏ) */
+.awards-gallery {
+    flex: 1; /* Chiếm 1 phần không gian (khoảng 33%) */
+    border-left: 1px solid #eee; /* Đường kẻ mờ ngăn cách (tùy chọn) */
+    padding-left: 30px;
+}
+
+.gallery-item {
+    margin-bottom: 30px; /* Khoảng cách giữa các ảnh */
+}
+
+.gallery-item img {
+    width: 100%;        /* Ảnh co giãn theo chiều rộng cột */
+    border-radius: 4px; /* Bo góc nhẹ cho đẹp */
+    border: 1px solid #ddd; /* Viền mỏng quanh ảnh */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Đổ bóng nhẹ */
+}
+
+.gallery-caption {
+    font-size: 14px;
+    font-style: italic;
+    color: #777;
+    text-align: center; /* Canh giữa caption dưới ảnh */
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+/* --- Responsive Mobile --- */
+@media (max-width: 900px) {
+    .awards-layout {
+        flex-direction: column; /* Trên điện thoại thì xếp dọc */
+    }
+    
+    .awards-gallery {
+        width: 100%;
+        border-left: none;
+        padding-left: 0;
+        margin-top: 40px;
+        border-top: 1px solid #eee; /* Đổi thành kẻ ngang trên đầu */
+        padding-top: 20px;
+    }
+    
+    .gallery-item img {
+        max-width: 100%; /* Đảm bảo ảnh không bị tràn màn hình */
+    }
+}
 
 
 
