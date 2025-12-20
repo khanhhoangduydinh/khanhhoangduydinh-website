@@ -495,29 +495,37 @@ p.caption + p.caption {
 /* Style cho từng mục giải thưởng (giống Publications) */
 .award-item {
     display: flex;
-    gap: 15px;
+    gap: 15px;               /* Khoảng cách giữa số và chữ */
     margin-bottom: 30px;
-    align-items: flex-start;
+    align-items: baseline;   /* QUAN TRỌNG: Lệnh này ép chân chữ và chân số nằm trên 1 đường thẳng */
 }
 
 .award-number-box {
     flex: 0 0 30px;
     font-weight: bold;
-    color: #2a7bbd; /* Màu xanh đồng bộ */
+    color: #2a7bbd;
     font-size: 18px;
     text-align: right;
-    padding-top: 2px;
+    
+    /* Xóa padding-top cũ đi để dùng align-items: baseline cho chuẩn */
+    padding-top: 0; 
+    line-height: 1.3; /* Đặt line-height khớp với tiêu đề bên phải */
 }
 
 .award-content-box {
     flex: 1;
 }
 
-.award-title {
-    font-size: 18px;
+.award-number-box {
+    flex: 0 0 30px;
     font-weight: bold;
-    color: #000;
-    margin-bottom: 5px;
+    color: #2a7bbd;
+    font-size: 18px;
+    text-align: right;
+    
+    /* Xóa padding-top cũ đi để dùng align-items: baseline cho chuẩn */
+    padding-top: 0; 
+    line-height: 1.3; /* Đặt line-height khớp với tiêu đề bên phải */
 }
 
 .award-desc {
@@ -580,6 +588,7 @@ p.caption + p.caption {
         max-width: 100%; /* Đảm bảo ảnh không bị tràn màn hình */
     }
 }
+
 
 
 
