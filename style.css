@@ -32,10 +32,8 @@ a:hover {
 /* --- 3. CỘT TRÁI (SIDEBAR MENU) --- */
 .sidebar {
     width: 300px; 
-    padding: 40px; 
-    
-    /* ĐÃ SỬA: Xóa bỏ dòng border-radius: 50% ở đây vì nó làm méo menu */
-    
+    padding: 40px;
+    background-color: #f5f5f5;
     position: sticky; 
     top: 0;
     height: 100vh; 
