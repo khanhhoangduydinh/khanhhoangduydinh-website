@@ -597,7 +597,30 @@ p.caption + p.caption {
     }
 }
 
+/* --- ĐỊNH DẠNG LINK CHUẨN ACADEMIC (Xanh dương + Gạch chân) --- */
 
+/* 1. Áp dụng cho tất cả các link trong phần nội dung chính */
+.content a {
+    color: #0000EE; /* Mã màu xanh dương chuẩn của trình duyệt */
+    text-decoration: underline; /* Luôn hiển thị gạch chân */
+}
+
+/* 2. Hiệu ứng khi di chuột vào link (đậm hơn một chút) */
+.content a:hover {
+    color: #003399; 
+    text-decoration: underline;
+}
+
+/* 3. BẢO VỆ CÁC NÚT BẤM (Để chúng không bị gạch chân và biến thành màu xanh) */
+.content a.btn-square {
+    color: #333 !important; /* Trả lại màu đen cho chữ trong nút */
+    text-decoration: none !important; /* Xóa gạch chân của nút */
+}
+
+.content a.btn-square:hover {
+    color: #fff !important; /* Chữ trắng khi hover nút */
+    background-color: #333;
+}
 
 
 
