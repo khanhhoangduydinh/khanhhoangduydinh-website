@@ -236,11 +236,11 @@ p.caption + p.caption {
 
 /* --- CLASS CHUNG CHO TIÊU ĐỀ (ĐỂ THẲNG HÀNG) --- */
 .bio-heading {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif; 
     font-size: 22px; 
     font-weight: normal; /* Chữ thường, không đậm */
     color: #333;
-    
+        
     /* QUAN TRỌNG: Xử lý căn lề */
     margin-top: 0 !important;  /* Xóa khoảng trống thừa phía trên */
     margin-bottom: 20px;       /* Khoảng cách xuống nội dung dưới */
