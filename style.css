@@ -602,7 +602,6 @@ p.caption + p.caption {
 /* 1. Áp dụng cho tất cả các link trong phần nội dung chính */
 .content a {
     color: #0000EE; /* Mã màu xanh dương chuẩn của trình duyệt */
-    text-decoration: underline; /* Luôn hiển thị gạch chân */
 }
 
 /* 2. Hiệu ứng khi di chuột vào link (đậm hơn một chút) */
