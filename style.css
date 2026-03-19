@@ -6,10 +6,13 @@
 }
 
 body {
-    font-family: 'Times New Roman', Times, serif; 
-    font-size: 18px; 
-    line-height: 1.6; 
-    color: #333; 
+    /* Đổi sang font không chân (Sans-serif) giống hệt hình mẫu */
+    font-family: Arial, Helvetica, sans-serif; 
+    
+    /* Chỉnh cỡ chữ và giãn dòng cho cảm giác "đặc" và học thuật hơn */
+    font-size: 15px; 
+    line-height: 1.5; 
+    color: #000; 
     background-color: #fff; 
 }
 
@@ -93,8 +96,11 @@ a:hover {
 /* --- 4. CỘT PHẢI (NỘI DUNG CHÍNH) --- */
 .content {
     flex: 1; 
-    padding: 60px 80px; 
-    max-width: 1600px; 
+    padding: 50px 40px; 
+    
+    /* --- SỬA THÔNG SỐ Ở ĐÂY --- */
+    max-width: 950px; /* Bóp hẹp chiều rộng tối đa lại giống trang mẫu */
+    margin: 0 auto;   /* Tự động căn giữa nội dung trong không gian còn lại */
 }
 
 img {
