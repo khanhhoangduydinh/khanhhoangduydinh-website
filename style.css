@@ -199,7 +199,8 @@ p.caption + p.caption {
 }
 
 .intro-content p {
-    margin-bottom: 10px; /* Khoảng cách giữa các dòng thông tin */
+    margin-bottom: 4px; /* Khoảng cách giữa các dòng (càng nhỏ càng sát) */
+    line-height: 1.15;   /* Độ cao của dòng chữ */
 }
 
 /* --- BỐ CỤC BIOGRAPHY & KẾT NỐI (ĐÃ CHỈNH SỬA) --- */
