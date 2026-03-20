@@ -323,14 +323,15 @@ p.caption + p.caption {
     flex: 1;                
 }
 
-.pub-title {
-    margin: 0 0 5px 0;      
-    font-size: 18px; /* Tên bài báo lớn hơn nội dung thường 1 chút */
+.pub-title a[href], 
+.award-title a[href] {
+    color: #0000EE !important; 
 }
 
-.pub-title a {
-    color: #2a7bbd;
-    font-weight: bold;
+.pub-title a[href]:hover, 
+.award-title a[href]:hover {
+    color: #003399 !important;
+    text-decoration: underline !important;
 }
 
 .pub-authors, .pub-venue {
