@@ -1,4 +1,6 @@
-/* --- 1. CẤU HÌNH CHUNG (RESET) --- */
+/* =========================================
+   1. CẤU HÌNH CHUNG (RESET & TYPOGRAPHY)
+========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -6,33 +8,41 @@
 }
 
 body {
-    /* Đổi sang font không chân (Sans-serif) giống hệt hình mẫu */
     font-family: Arial, Helvetica, sans-serif; 
-    
-    /* Chỉnh cỡ chữ và giãn dòng cho cảm giác "đặc" và học thuật hơn */
-    font-size: 17px; 
-    line-height: 1.15; 
+    font-size: 15px;      /* THỐNG NHẤT FONT-SIZE CHO TOÀN BỘ NỘI DUNG */
+    line-height: 1.15;    /* THỐNG NHẤT LINE-HEIGHT CHO TOÀN BỘ NỘI DUNG */
     color: #000; 
     background-color: #fff; 
 }
 
+/* Định dạng Link chuẩn Academic cho phần nội dung */
 a {
+    color: #0000EE; 
     text-decoration: none; 
-    color: #000; 
 }
 
 a:hover {
+    color: #003399; 
     text-decoration: underline; 
-    color: #555; 
 }
 
-/* --- 2. BỐ CỤC CHÍNH (LAYOUT 2 CỘT) --- */
+img {
+    max-width: 100%; 
+    height: auto; 
+    display: block;
+}
+
+/* =========================================
+   2. BỐ CỤC CHÍNH (LAYOUT 2 CỘT)
+========================================= */
 .wrapper {
     display: flex; 
     min-height: 100vh; 
 }
 
-/* --- 3. CỘT TRÁI (SIDEBAR MENU) --- */
+/* =========================================
+   3. CỘT TRÁI (SIDEBAR MENU)
+========================================= */
 .sidebar {
     width: 300px; 
     padding: 40px; 
@@ -40,21 +50,17 @@ a:hover {
     top: 0;
     height: 100vh; 
     border-right: 1px solid #ddd; 
-    
-    /* Dùng !important để ép trình duyệt nhận màu xám, bỏ qua mọi màu trắng cũ */
     background-color: #f5f5f5 !important; 
-    
     z-index: 100;
 }
 
-/* Code bổ sung cho Avatar nhỏ trên menu (nếu chưa có) */
 .sidebar-avatar img {
     width: 120px;
     height: 120px;
-    border-radius: 50%; /* Bo tròn chỉ dành cho ảnh */
+    border-radius: 50%; 
     object-fit: cover;
     margin-bottom: 20px;
-    display: block;     /* Căn giữa ảnh nếu cần */
+    display: block;     
     margin-left: auto;
     margin-right: auto;
 }
@@ -65,7 +71,13 @@ a:hover {
     margin-bottom: 40px; 
     letter-spacing: 1px; 
     text-transform: uppercase; 
-    text-align: center; /* Căn giữa tên */
+    text-align: center; 
+}
+
+/* Bảo vệ link tiêu đề không bị xanh */
+.site-title a {
+    color: #000 !important;
+    text-decoration: none !important;
 }
 
 .nav-menu ul {
@@ -77,56 +89,47 @@ a:hover {
 }
 
 .nav-menu a {
-    font-size: 16px;
-    color: #666;
+    color: #666 !important; /* Bảo vệ link menu */
+    text-decoration: none !important;
 }
 
-.nav-menu a:hover {
-    color: #000;
+.nav-menu a:hover,
+.nav-menu a.active-menu {
+    color: #000 !important;
+    text-decoration: underline !important;
 }
 
 .sidebar-footer {
     position: absolute; 
     bottom: 40px; 
-    font-size: 12px;
     color: #999;
-    left: 40px; /* Căn thẳng hàng với nội dung */
+    left: 40px; 
 }
 
-/* --- 4. CỘT PHẢI (NỘI DUNG CHÍNH) --- */
+/* =========================================
+   4. CỘT PHẢI (NỘI DUNG CHÍNH)
+========================================= */
 .content {
     flex: 1; 
     padding: 50px 40px; 
-    
-    /* --- SỬA THÔNG SỐ Ở ĐÂY --- */
-    max-width: 1100px; /* Bóp hẹp chiều rộng tối đa lại giống trang mẫu */
-    margin: 0 auto;   /* Tự động căn giữa nội dung trong không gian còn lại */
+    max-width: 1100px; 
+    margin: 0 auto;   
 }
 
-img {
-    max-width: 100%; 
-    height: auto; 
-    display: block;
-}
-
-/* Ảnh bìa (Cover) */
+/* --- ẢNH BÌA & CAPTION --- */
 .hero-image img {
     width: 100%;
     height: 400px;        
-    
-    /* ĐÃ SỬA: Thêm dòng này để ảnh không bị méo khi set chiều cao cứng */
     object-fit: cover;     
-    object-position: center 30%; /* Căn chỉnh vị trí hiển thị (đẩy ảnh lên/xuống) */
+    object-position: center 30%; 
 }
 
 .caption {
     font-style: italic; 
-    font-size: 16px;
     color: #777;
     margin-top: 10px;
-    text-align: center;       
-    display: block;           
-    line-height: 1.4;  
+    text-align: center;        
+    display: block;            
     margin-bottom: 0;  
 }
 
@@ -135,14 +138,19 @@ p.caption + p.caption {
 }
 
 .caption-divider::after {
-    content: ""; /* Tạo một phần tử giả */
+    content: ""; 
     display: block;
-    width: 60px; /* Độ dài của gạch ngang (bạn có thể thay đổi) */
-    height: 1px; /* Độ dày của gạch ngang */
-    background-color: #777; /* Màu sắc (giống màu chữ caption) */
-    margin: 15px auto 0; /* Căn giữa và tạo khoảng cách phía trên */
+    width: 60px; 
+    height: 1px; 
+    background-color: #777; 
+    margin: 15px auto 0; 
 }
-/* Tiêu đề chung */
+
+/* --- CLASS CHUNG CHO CÁC TIÊU ĐỀ SECTION --- */
+.section {
+    margin-bottom: 60px; 
+}
+
 .section-title {
     font-size: 22px;
     font-weight: normal; 
@@ -152,44 +160,35 @@ p.caption + p.caption {
     margin-top: 40px;
 }
 
-.section {
-    margin-bottom: 60px; 
-}
+/* =========================================
+   5. CÁC THÀNH PHẦN NỘI DUNG (SECTIONS)
+========================================= */
 
-/* --- CSS RIÊNG CHO TIÊU ĐỀ INTRODUCTION --- */
+/* --- INTRODUCTION --- */
 .intro-title {
-    /* 1. Sửa lỗi cú pháp: Thêm dấu chấm phẩy (;) ở cuối dòng này */
     border-top: none;  
-    
-    /* 2. Tạo đường kẻ dưới: ĐÚNG */
     border-bottom: 1px solid #333; 
-    
-    /* 3. QUAN TRỌNG: Đổi padding-top thành padding-bottom 
-       để tạo khoảng thở giữa Chữ và Đường kẻ dưới */
     padding-bottom: 15px; 
-    
-    /* Các thông số khác giữ nguyên */
     margin-bottom: 30px;
     font-size: 24px;
     text-transform: uppercase; 
     font-weight: normal;        
 }
 
-/* --- BỐ CỤC PHẦN GIỚI THIỆU (Avatar trái, Nội dung phải) --- */
 .intro-container {
-    display: flex;           
+    display: flex;            
     align-items: flex-start; 
 }
 
 .intro-avatar {
     flex: 0 0 auto; 
-    margin-right: 40px; /* Tăng khoảng cách ra chút cho thoáng (cũ là 20px) */
+    margin-right: 40px; 
 }
 
 .intro-avatar img {
-    width: 200px;           
-    height: 200px;           
-    border-radius: 50%;      /* Bo tròn ảnh Introduction */
+    width: 200px;            
+    height: 200px;            
+    border-radius: 50%;      
     object-fit: cover;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
 }
@@ -199,30 +198,27 @@ p.caption + p.caption {
 }
 
 .intro-content p {
-    margin-bottom: 4px; /* Khoảng cách giữa các dòng (càng nhỏ càng sát) */
-    line-height: 1.15;   /* Độ cao của dòng chữ */
+    margin-bottom: 4px; 
 }
 
-/* --- BỐ CỤC BIOGRAPHY & KẾT NỐI (ĐÃ CHỈNH SỬA) --- */
-
+/* --- BIOGRAPHY & CONNECT --- */
 .bio-container {
     display: flex;            
     gap: 40px;
-    align-items: stretch; /* Giữ độ cao bằng nhau để kẻ đường border */
+    align-items: stretch; 
     margin-top: 40px; 
 }
 
-/* Cấu hình chung cho 2 cột để tránh bị lệch */
 .bio-left-content,
 .bio-right-connect {
     display: flex;
     flex-direction: column;
-    padding-top: 0 !important; /* QUAN TRỌNG: Ép nội dung lên sát mép trên */
+    padding-top: 0 !important; 
 }
 
 .bio-left-content {
-    flex: 3; /* Chiếm 75% */
-    text-align: justify; /* Căn đều chữ văn bản */
+    flex: 3; 
+    text-align: justify; 
 }
 
 .bio-left-content p {
@@ -230,38 +226,26 @@ p.caption + p.caption {
 }
 
 .bio-right-connect {
-    flex: 1; /* Chiếm 25% */
+    flex: 1; 
     border-left: 1px solid #ddd; 
-    padding-left: 30px;       
+    padding-left: 30px;        
 }
 
-/* --- CLASS CHUNG CHO TIÊU ĐỀ (ĐỂ THẲNG HÀNG) --- */
 .bio-heading {
-    font-family: Arial, Helvetica, sans-serif; 
     font-size: 22px; 
-    font-weight: normal; /* Chữ thường, không đậm */
+    font-weight: normal; 
     color: #333;
-        
-    /* QUAN TRỌNG: Xử lý căn lề */
-    margin-top: 0 !important;  /* Xóa khoảng trống thừa phía trên */
-    margin-bottom: 20px;       /* Khoảng cách xuống nội dung dưới */
-    padding-bottom: 10px;      /* Khoảng cách giữa chữ và đường kẻ */
-    
-    border-bottom: 1px solid #000; /* Đường kẻ đen dưới chân */
-    line-height: 1.4;
-    text-transform: none; /* Giữ nguyên chữ hoa/thường như HTML */
-}
-
-/* --- DANH SÁCH LINK --- */
-.social-links-list {
-    /* Không cần margin-top vì tiêu đề đã có margin-bottom sẵn */
+    margin-top: 0 !important;  
+    margin-bottom: 20px;       
+    padding-bottom: 10px;      
+    border-bottom: 1px solid #000; 
+    text-transform: none; 
 }
 
 .social-item {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
-    font-size: 15px;
     color: #333;
     text-decoration: none;
     transition: 0.2s;
@@ -269,7 +253,7 @@ p.caption + p.caption {
 
 .social-item i {
     width: 25px;
-    font-size: 18px;
+    font-size: 18px; /* Giữ icon to hơn text 1 chút để dễ nhìn */
 }
 
 .social-item:hover {
@@ -277,93 +261,21 @@ p.caption + p.caption {
     text-decoration: underline;
 }
 
-/* --- MOBILE --- */
-@media (max-width: 768px) {
-    .bio-container {
-        flex-direction: column;
-    }
-    .bio-right-connect {
-        border-left: none;
-        border-top: 1px solid #ddd;
-        padding-left: 0;
-        padding-top: 20px;
-        margin-top: 20px;
-    }
-}
-
-/* --- RESPONSIVE (GIAO DIỆN ĐIỆN THOẠI) --- */
-@media (max-width: 768px) {
-    /* Layout chung */
-    .wrapper {
-        flex-direction: column; 
-    }
-
-    .sidebar {
-        width: 100%; 
-        height: auto; 
-        position: relative; 
-        border-right: none;
-        border-bottom: 1px solid #eee;
-        padding: 20px;
-        text-align: center; /* Căn giữa nội dung menu trên mobile */
-    }
-    
-    .sidebar-footer {
-        position: relative;
-        bottom: 0;
-        left: 0;
-        margin-top: 20px;
-    }
-
-    .content {
-        padding: 30px 20px; 
-    }
-
-    /* Intro Section Mobile */
-    .intro-container {
-        flex-direction: column; 
-        align-items: center;    
-    }
-
-    .intro-avatar {
-        margin-right: 0;
-        margin-bottom: 30px;    
-    }
-    
-    .intro-content {
-        text-align: center; /* Căn giữa chữ trên mobile */
-    }
-
-    /* Biography Section Mobile */
-    .biography-layout {
-        flex-direction: column; 
-    }
-    .bio-right-col {
-        border-left: none;      
-        border-top: 1px solid #ddd; 
-        padding-left: 0;
-        padding-top: 20px;
-        margin-top: 20px;
-        width: 100%;
-    }
-}
-
-/* --- CSS CHO PHẦN EDUCATION --- */
-
+/* --- EDUCATION --- */
 .edu-item {
-    display: flex;              /* Xếp ngang hàng */
-    justify-content: space-between; /* Đẩy 2 phần ra 2 đầu (Trái - Phải) */
-    align-items: flex-start;    /* Căn chỉnh theo mép trên */
-    margin-bottom: 25px;        /* Khoảng cách giữa các mục Education */
+    display: flex;              
+    justify-content: space-between; 
+    align-items: flex-start;    
+    margin-bottom: 25px;        
 }
 
 .edu-info {
-    flex: 1;                    /* Phần nội dung chiếm hết khoảng trống còn lại */
-    padding-right: 20px;        /* Tạo khoảng hở để chữ không dính vào ngày tháng */
+    flex: 1;                    
+    padding-right: 20px;        
 }
 
 .edu-info h4 {
-    font-size: 18px;
+    font-size: 18px; /* Tiêu đề ngành học lớn hơn nội dung */
     margin-bottom: 5px;
     color: #000;
 }
@@ -375,23 +287,229 @@ p.caption + p.caption {
 }
 
 .edu-desc {
-    font-size: 15px;
     color: #444;
     margin-bottom: 2px;
-    line-height: 1.4;
 }
 
 .edu-date {
-    flex: 0 0 auto;             /* Không cho phép co giãn kích thước ngày tháng */
-    text-align: right;          /* Căn lề phải cho ngày tháng */
-    font-weight: bold;          /* In đậm ngày tháng (tùy chọn) */
+    flex: 0 0 auto;             
+    text-align: right;          
+    font-weight: bold;          
     color: #333;
-    white-space: nowrap;        /* Giữ ngày tháng trên 1 dòng */
+    white-space: nowrap;        
 }
 
-/* --- Mobile Responsive cho Education --- */
-/* Khi màn hình nhỏ, ngày tháng sẽ rớt xuống dòng cho dễ đọc */
+/* --- PUBLICATIONS & COMPETITIONS --- */
+.pub-item-modern {
+    display: flex;          
+    gap: 15px;              
+    margin-bottom: 30px;    
+    align-items: flex-start; 
+}
+
+.pub-number-box {
+    flex: 0 0 30px;         
+    font-weight: bold;
+    color: #2a7bbd;         
+    font-size: 20px; /* Số thứ tự cần nổi bật */     
+    padding-top: 0;         
+    text-align: right;      
+}
+
+.pub-content-box {
+    flex: 1;                
+}
+
+.pub-title {
+    margin: 0 0 5px 0;      
+    font-size: 18px; /* Tên bài báo lớn hơn nội dung thường 1 chút */
+}
+
+.pub-title a {
+    color: #2a7bbd;
+    font-weight: bold;
+}
+
+.pub-authors, .pub-venue {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.highlight-red {
+    color: #d93025;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* NÚT BẤM (SQUARE BUTTONS) */
+.pub-buttons-group {
+    margin-top: 8px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-square {
+    display: inline-block;
+    padding: 3px 10px;          
+    border: 1px solid #333;     
+    color: #333 !important;
+    text-decoration: none !important;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    background-color: transparent;
+}
+
+.btn-square:hover {
+    background-color: #333;     
+    color: #fff !important;                
+    border-color: #333;
+}
+
+/* --- AWARDS & CERTIFICATIONS --- */
+.awards-layout {
+    display: flex;
+    gap: 40px;              
+    align-items: flex-start; 
+}
+
+.awards-list {
+    flex: 2; 
+}
+
+.award-item {
+    display: flex;
+    gap: 15px;               
+    margin-bottom: 30px;
+    align-items: baseline;   
+}
+
+.award-number-box {
+    flex: 0 0 30px;
+    font-weight: bold;
+    color: #2a7bbd;
+    font-size: 18px; /* Đồng bộ số thứ tự */
+    text-align: right;
+    padding-top: 0; 
+}
+
+.award-content-box {
+    flex: 1;
+}
+
+.award-title {
+    font-size: 18px; 
+    font-weight: bold;
+    color: #000;
+    margin-top: 0 !important; 
+    margin-bottom: 5px;
+}
+
+.award-desc {
+    color: #333;
+    margin-bottom: 5px;
+    text-align: justify;
+}
+
+.award-date {
+    font-style: italic;
+    color: #666;
+}
+
+.awards-gallery {
+    flex: 1; 
+    border-left: 1px solid #eee; 
+    padding-left: 30px;
+}
+
+.gallery-item {
+    margin-bottom: 30px; 
+}
+
+.gallery-item img {
+    width: 100%;        
+    border-radius: 4px; 
+    border: 1px solid #ddd; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+}
+
+.gallery-caption {
+    font-style: italic;
+    color: #777;
+    text-align: center; 
+    margin-top: 8px;
+}
+
+/* --- NEWS SECTION --- */
+.news-list {
+    list-style-type: disc; 
+    margin-left: 20px;     
+    padding-left: 0;
+}
+
+.news-list li {
+    margin-bottom: 6px;    
+}
+
+/* =========================================
+   6. RESPONSIVE (MOBILE VIEW)
+========================================= */
+@media (max-width: 900px) {
+    .awards-layout {
+        flex-direction: column; 
+    }
+    .awards-gallery {
+        width: 100%;
+        border-left: none;
+        padding-left: 0;
+        margin-top: 40px;
+        border-top: 1px solid #eee; 
+        padding-top: 20px;
+    }
+}
+
 @media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column; 
+    }
+    .sidebar {
+        width: 100%; 
+        height: auto; 
+        position: relative; 
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding: 20px;
+        text-align: center; 
+    }
+    .sidebar-footer {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        margin-top: 20px;
+    }
+    .content {
+        padding: 30px 20px; 
+    }
+    .intro-container {
+        flex-direction: column; 
+        align-items: center;    
+    }
+    .intro-avatar {
+        margin-right: 0;
+        margin-bottom: 30px;    
+    }
+    .intro-content {
+        text-align: center; 
+    }
+    .bio-container {
+        flex-direction: column;
+    }
+    .bio-right-connect {
+        border-left: none;
+        border-top: 1px solid #ddd;
+        padding-left: 0;
+        padding-top: 20px;
+        margin-top: 20px;
+    }
     .edu-item {
         flex-direction: column; 
     }
@@ -401,238 +519,3 @@ p.caption + p.caption {
         font-style: italic;
     }
 }
-
-/* --- CSS PUBLICATIONS MỚI (Căn thẳng hàng & Ô vuông) --- */
-
-.pub-item-modern {
-    display: flex;          /* Chia làm 2 cột: Số bên trái, Nội dung bên phải */
-    gap: 15px;              /* Khoảng cách giữa Số và Nội dung */
-    margin-bottom: 30px;    /* Khoảng cách giữa các bài báo */
-    align-items: flex-start; /* Căn hàng từ mép trên cùng */
-}
-
-/* CỘT 1: SỐ THỨ TỰ (C...) */
-.pub-number-box {
-    flex: 0 0 30px;         /* Chiếm cứng 30px chiều rộng */
-    font-weight: bold;
-    color: #2a7bbd;         /* Màu xanh */
-    font-size: 20px;        /* Cỡ chữ bằng với Title để thẳng hàng */
-    padding-top: 0;         
-    text-align: right;      /* Căn phải để số sát vào nội dung */
-    line-height: 1.3;       /* Khớp dòng với tiêu đề bên phải */
-}
-
-/* CỘT 2: KHỐI NỘI DUNG */
-.pub-content-box {
-    flex: 1;                /* Chiếm hết phần còn lại */
-    /* Mọi thứ trong này sẽ tự động thẳng hàng với nhau */
-}
-
-/* Tiêu đề */
-.pub-title {
-    margin: 0 0 5px 0;      /* Reset margin */
-    font-size: 20px;
-    line-height: 1.3;
-}
-
-.pub-title a {
-    color: #2a7bbd;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.pub-title a:hover {
-    text-decoration: underline;
-}
-
-/* Thông tin Tác giả & Venue */
-.pub-authors, .pub-venue {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 5px;
-    line-height: 1.5;
-}
-
-.highlight-red {
-    color: #d93025;
-    font-weight: bold;
-    font-style: italic;
-}
-
-/* --- NÚT BẤM Ô VUÔNG (SQUARE BUTTONS) --- */
-.pub-buttons-group {
-    margin-top: 8px;
-    display: flex;
-    gap: 10px;
-}
-
-.btn-square {
-    display: inline-block;
-    padding: 3px 10px;          /* Độ rộng nút */
-    border: 1px solid #333;     /* Viền đen tạo hình ô vuông */
-    color: #333;
-    text-decoration: none;
-    font-size: 14px;
-    font-family: Arial, sans-serif;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    background-color: transparent;
-}
-
-.btn-square:hover {
-    background-color: #333;     /* Hover vào nền đen */
-    color: #fff;                /* Chữ trắng */
-    border-color: #333;
-    text-decoration: none;
-}
-
-/* --- CSS CHO TRANG AWARDS (Chia cột) --- */
-
-/* 1. Khung bao quanh để chia 2 phần */
-.awards-layout {
-    display: flex;
-    gap: 40px;              /* Khoảng cách giữa 2 cột lớn */
-    align-items: flex-start; /* Căn hàng từ mép trên */
-}
-
-/* 2. Cột trái: Danh sách giải thưởng (Chiếm phần lớn) */
-.awards-list {
-    flex: 2; /* Chiếm 2 phần không gian (khoảng 66%) */
-}
-
-/* Style cho từng mục giải thưởng (giống Publications) */
-.award-item {
-    display: flex;
-    gap: 15px;               /* Khoảng cách giữa số và chữ */
-    margin-bottom: 30px;
-    align-items: baseline;   /* QUAN TRỌNG: Lệnh này ép chân chữ và chân số nằm trên 1 đường thẳng */
-}
-
-.award-number-box {
-    flex: 0 0 30px;
-    font-weight: bold;
-    color: #2a7bbd;
-    font-size: 18px;
-    text-align: right;
-    
-    /* Xóa padding-top cũ đi để dùng align-items: baseline cho chuẩn */
-    padding-top: 0; 
-    line-height: 1.3; /* Đặt line-height khớp với tiêu đề bên phải */
-}
-
-.award-content-box {
-    flex: 1;
-}
-
-.award-number-box {
-    flex: 0 0 30px;
-    font-weight: bold;
-    color: #2a7bbd;
-    font-size: 18px;
-    text-align: right;
-    
-    /* Xóa padding-top cũ đi để dùng align-items: baseline cho chuẩn */
-    padding-top: 0; 
-    line-height: 1.3; /* Đặt line-height khớp với tiêu đề bên phải */
-}
-
-.award-desc {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 5px;
-    line-height: 1.5;
-    text-align: justify;
-}
-
-.award-date {
-    font-size: 14px;
-    font-style: italic;
-    color: #666;
-}
-
-/* 3. Cột phải: Gallery ảnh (Chiếm phần nhỏ) */
-.awards-gallery {
-    flex: 1; /* Chiếm 1 phần không gian (khoảng 33%) */
-    border-left: 1px solid #eee; /* Đường kẻ mờ ngăn cách (tùy chọn) */
-    padding-left: 30px;
-}
-
-.gallery-item {
-    margin-bottom: 30px; /* Khoảng cách giữa các ảnh */
-}
-
-.gallery-item img {
-    width: 100%;        /* Ảnh co giãn theo chiều rộng cột */
-    border-radius: 4px; /* Bo góc nhẹ cho đẹp */
-    border: 1px solid #ddd; /* Viền mỏng quanh ảnh */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Đổ bóng nhẹ */
-}
-
-.gallery-caption {
-    font-size: 14px;
-    font-style: italic;
-    color: #777;
-    text-align: center; /* Canh giữa caption dưới ảnh */
-    margin-top: 8px;
-    line-height: 1.4;
-}
-
-/* --- Responsive Mobile --- */
-@media (max-width: 900px) {
-    .awards-layout {
-        flex-direction: column; /* Trên điện thoại thì xếp dọc */
-    }
-    
-    .awards-gallery {
-        width: 100%;
-        border-left: none;
-        padding-left: 0;
-        margin-top: 40px;
-        border-top: 1px solid #eee; /* Đổi thành kẻ ngang trên đầu */
-        padding-top: 20px;
-    }
-    
-    .gallery-item img {
-        max-width: 100%; /* Đảm bảo ảnh không bị tràn màn hình */
-    }
-}
-
-/* --- ĐỊNH DẠNG LINK CHUẨN ACADEMIC (Xanh dương + Gạch chân) --- */
-
-/* 1. Áp dụng cho tất cả các link trong phần nội dung chính */
-.content a {
-    color: #0000EE; /* Mã màu xanh dương chuẩn của trình duyệt */
-}
-
-/* 2. Hiệu ứng khi di chuột vào link (đậm hơn một chút) */
-.content a:hover {
-    color: #003399; 
-    text-decoration: underline;
-}
-
-/* 3. BẢO VỆ CÁC NÚT BẤM (Để chúng không bị gạch chân và biến thành màu xanh) */
-.content a.btn-square {
-    color: #333 !important; /* Trả lại màu đen cho chữ trong nút */
-    text-decoration: none !important; /* Xóa gạch chân của nút */
-}
-
-.content a.btn-square:hover {
-    color: #fff !important; /* Chữ trắng khi hover nút */
-    background-color: #333;
-}
-
-/* --- NEWS SECTION --- */
-.news-list {
-    list-style-type: disc; /* Dấu chấm tròn đen */
-    margin-left: 20px;     /* Thụt lề vào một chút */
-    padding-left: 0;
-}
-
-.news-list li {
-    margin-bottom: 6px;    /* Khoảng cách giữa các dòng tin */
-    line-height: 1.15;      /* Độ cao của dòng để dễ đọc */
-    font-size: 15px;       /* Khớp với font size chung toàn trang */
-}
-
-
-
