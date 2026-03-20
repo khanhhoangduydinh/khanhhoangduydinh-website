@@ -522,3 +522,14 @@ p.caption + p.caption {
         font-style: italic;
     }
 }
+
+/* 1. Tăng khoảng cách giữa các khu vực (section) lên 70px hoặc 80px cho thoáng */
+.section {
+    margin-top: 0 !important;
+    margin-bottom: 70px !important; /* Bạn có thể tăng lên 80px nếu thích rộng hơn nữa */
+}
+
+/* 2. Xóa khoảng trống thừa ở mục Education/Industry cuối cùng để lề chuẩn xác 100% */
+.edu-item:last-child {
+    margin-bottom: 0 !important;
+}
