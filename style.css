@@ -534,3 +534,27 @@ p.caption + p.caption {
 .edu-item:last-child {
     margin-bottom: 0 !important;
 }
+/* =========================================
+   CĂN CHỈNH KHOẢNG CÁCH CHI TIẾT BÀI BÁO CHUẨN XÁC
+========================================= */
+
+/* 1. Tiêu đề bài báo */
+.pub-title {
+    margin-top: 0 !important;
+    margin-bottom: 6px !important; /* Khoảng cách cố định từ Tiêu đề xuống Tác giả */
+    line-height: 1.3 !important;   /* Giãn dòng một chút cho các tiêu đề dài (xuống dòng) dễ đọc hơn */
+}
+
+/* 2. Tên tác giả, DOI, và Thông tin hội nghị (Venue) */
+.pub-authors, 
+.pub-venue {
+    margin-top: 0 !important;
+    margin-bottom: 4px !important; /* Khoảng cách đều đặn giữa các dòng thông tin với nhau */
+    line-height: 1.4 !important;   /* Giãn dòng bên trong đoạn văn dài (nếu hội nghị dài quá 1 dòng) */
+}
+
+/* 3. Xóa khoảng trống thừa ở dòng cuối cùng của mỗi bài báo */
+.pub-content-box > div:last-child,
+.pub-venue:last-child {
+    margin-bottom: 0 !important;
+}
