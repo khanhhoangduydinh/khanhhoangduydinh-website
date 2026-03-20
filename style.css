@@ -621,5 +621,18 @@ p.caption + p.caption {
     background-color: #333;
 }
 
+/* --- NEWS SECTION --- */
+.news-list {
+    list-style-type: disc; /* Dấu chấm tròn đen */
+    margin-left: 20px;     /* Thụt lề vào một chút */
+    padding-left: 0;
+}
+
+.news-list li {
+    margin-bottom: 6px;    /* Khoảng cách giữa các dòng tin */
+    line-height: 1.4;      /* Độ cao của dòng để dễ đọc */
+    font-size: 15px;       /* Khớp với font size chung toàn trang */
+}
+
 
 
