@@ -313,7 +313,7 @@ p.caption + p.caption {
 .pub-number-box {
     flex: 0 0 30px;         
     font-weight: bold;
-    color: #2a7bbd;         
+    color: #0000EE !important;         
     font-size: 20px; /* Số thứ tự cần nổi bật */     
     padding-top: 0;         
     text-align: right;      
