@@ -630,7 +630,7 @@ p.caption + p.caption {
 
 .news-list li {
     margin-bottom: 6px;    /* Khoảng cách giữa các dòng tin */
-    line-height: 1.4;      /* Độ cao của dòng để dễ đọc */
+    line-height: 1.15;      /* Độ cao của dòng để dễ đọc */
     font-size: 15px;       /* Khớp với font size chung toàn trang */
 }
 
