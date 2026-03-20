@@ -99,7 +99,7 @@ a:hover {
     padding: 50px 40px; 
     
     /* --- SỬA THÔNG SỐ Ở ĐÂY --- */
-    max-width: 950px; /* Bóp hẹp chiều rộng tối đa lại giống trang mẫu */
+    max-width: 1200px; /* Bóp hẹp chiều rộng tối đa lại giống trang mẫu */
     margin: 0 auto;   /* Tự động căn giữa nội dung trong không gian còn lại */
 }
 
