@@ -170,7 +170,7 @@ p.caption + p.caption {
 /* --- INTRODUCTION --- */
 .intro-title {
     border-top: none;  
-    border-bottom: 1px solid #333; 
+    border-bottom: 1px solid #000; 
     padding-bottom: 15px; 
     margin-bottom: 20px;
     font-size: 22px;
@@ -237,7 +237,7 @@ p.caption + p.caption {
 .bio-heading {
     font-size: 22px; 
     font-weight: normal; 
-    color: #333;
+    color: #000;
     margin-top: 0 !important;  
     margin-bottom: 20px;       
     padding-bottom: 10px;      
