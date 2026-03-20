@@ -309,6 +309,16 @@
 
     // 2. Gọi hàm chạy cho danh sách CONFERENCE PROCEEDINGS
     autoNumberList('conference-list');
+
+    // Hàm để mở/đóng nội dung Abstract và BibTeX
+function toggleContent(id) {
+    var element = document.getElementById(id);
+    if (element.style.display === "block") {
+        element.style.display = "none";
+    } else {
+        element.style.display = "block";
+    }
+}
     </script>
 </body>
 </html>
