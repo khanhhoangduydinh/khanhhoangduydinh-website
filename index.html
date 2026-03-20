@@ -175,11 +175,14 @@
                 </div>
             </div>
             </section>
-            <section id="contact" class="section">
-                <h3 class="section-title"><b>NEWS</b></h3>
-                <p>Email: <a href="mailto:khanh.dinhoisp2003@hcmut.edu.vn">khanh (DOT) oisp2003 (AT) hcmut (DOT) edu (DOT) vn</a></p>
-                <p>Office: Ho Chi Minh City University of Technology, Vietnam National University - Ho Chi Minh City</p>
+            <section id="news" class="section" style="margin-top: 40px;">          
+                <h3 class="bio-heading"><b>NEWS</b></h3>
+                
+                <div id="news-container">
+                    <p><i>Loading news...</i></p>
+                </div>
             </section>
+            
             <div style="height: 100px;"></div> 
                             <div class="hero-image">
                     <p class="caption">A story that begins with love must also end with love</p>
@@ -187,6 +190,18 @@
                 </div>
         </main>
     </div>
+<script>
+        // Lệnh fetch sẽ gọi file news.html và nhét vào cái hộp news-container
+        fetch('news.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('news-container').innerHTML = data;
+            })
+            .catch(error => {
+                document.getElementById('news-container').innerHTML = "<p>Error loading news.</p>";
+                console.error('Error fetching news:', error);
+            });
+    </script>
 </body>
 </html>
 
