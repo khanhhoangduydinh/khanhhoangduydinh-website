@@ -173,7 +173,7 @@ p.caption + p.caption {
     border-bottom: 1px solid #333; 
     padding-bottom: 15px; 
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 22px;
     text-transform: uppercase; 
     font-weight: normal;        
 }
@@ -269,7 +269,7 @@ p.caption + p.caption {
     display: flex;              
     justify-content: space-between; 
     align-items: flex-start;    
-    margin-bottom: 25px;        
+    margin-bottom: 20px;        
 }
 
 .edu-info {
@@ -278,7 +278,7 @@ p.caption + p.caption {
 }
 
 .edu-info h4 {
-    font-size: 18px; /* Tiêu đề ngành học lớn hơn nội dung */
+    font-size: 17px; /* Tiêu đề ngành học lớn hơn nội dung */
     margin-bottom: 5px;
     color: #000;
 }
