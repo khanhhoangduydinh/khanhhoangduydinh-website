@@ -678,3 +678,38 @@ p.caption + p.caption {
     border-bottom: 1px dashed #ccc; 
     padding-bottom: 20px;
 }
+
+/* =========================================
+   GIAO DIỆN TRANG TEACHING (GIẢNG DẠY)
+========================================= */
+
+.teaching-item {
+    margin-bottom: 45px; /* Khoảng cách giữa các môn học */
+}
+
+/* 1. Tên môn học */
+.teaching-title {
+    font-size: 18px !important; /* Kích thước chuẩn Cấp 2, bằng với trang Research */
+    font-weight: bold;
+    color: #4a7298;             /* Màu xanh xám thanh lịch y hệt hình mẫu */
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+}
+
+/* 2. Năm giảng dạy (In nghiêng) */
+.teaching-year {
+    font-size: 15px;
+    font-style: italic;
+    color: #555;                /* Chữ màu xám để phân cấp thông tin */
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+}
+
+/* 3. Đoạn văn mô tả môn học */
+.teaching-desc {
+    font-size: 15px;
+    line-height: 1.6;           /* Giãn dòng rộng dễ đọc */
+    color: #333;
+    text-align: justify;        /* Căn đều hai bên vuông vức */
+    margin-top: 0 !important;
+}
