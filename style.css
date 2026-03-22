@@ -378,13 +378,11 @@ p.caption + p.caption {
 
 /* --- AWARDS & CERTIFICATIONS --- */
 .awards-layout {
-    display: flex;
-    gap: 40px;              
-    align-items: flex-start; 
+    display: block !important;
 }
 
 .awards-list {
-    flex: 2; 
+    width: 100% !important; 
 }
 
 .award-item {
