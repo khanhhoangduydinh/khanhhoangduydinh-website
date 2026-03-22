@@ -558,3 +558,80 @@ p.caption + p.caption {
 .pub-venue:last-child {
     margin-bottom: 0 !important;
 }
+
+/* =========================================
+   GIAO DIỆN TRANG RESEARCH (MẪU 2 CỘT: ẢNH TRÁI - CHỮ PHẢI)
+========================================= */
+
+/* Đoạn giới thiệu tổng quan ở đầu trang */
+.research-intro {
+    margin-bottom: 50px;
+    text-align: justify;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Khung chứa từng dự án */
+.research-project {
+    display: flex;
+    gap: 30px;              /* Khoảng cách giữa cột ảnh và cột chữ */
+    margin-bottom: 50px;    /* Khoảng cách giữa các dự án */
+    align-items: flex-start; /* Ép nội dung căn thẳng từ trên cùng xuống */
+}
+
+/* CỘT TRÁI: KHU VỰC ẢNH */
+.research-project-img {
+    flex: 0 0 300px;        /* Cố định chiều rộng cột ảnh là 300px (bạn có thể tăng giảm tùy ý) */
+}
+
+.research-project-img img {
+    width: 100%;            /* Ảnh tự động co giãn vừa vặn với cột 300px */
+    height: auto;
+    border-radius: 4px;     /* Bo góc ảnh cực nhẹ cho thanh lịch */
+    border: 1px solid #eee; /* Viền mờ mờ quanh ảnh */
+}
+
+/* CỘT PHẢI: KHU VỰC NỘI DUNG */
+.research-project-content {
+    flex: 1;                /* Chiếm toàn bộ phần diện tích còn lại bên phải */
+}
+
+.research-project-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4a7298;         /* Màu xanh lam nhạt y hệt trong hình mẫu của bạn */
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+    border-bottom: none;
+}
+
+.research-project-desc {
+    text-align: justify;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Định dạng các thẻ link [AAAI21a], [KDD21] trong đoạn văn */
+.research-project-desc a {
+    color: #555;
+    text-decoration: underline;
+}
+
+.research-project-desc a:hover {
+    color: #000;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+/* Khi màn hình nhỏ (điện thoại), tự động chuyển về 1 cột (Ảnh trên - Chữ dưới) */
+@media (max-width: 768px) {
+    .research-project {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .research-project-img {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: 400px;  /* Khống chế không cho ảnh phình quá to trên mobile */
+        margin: 0 auto;    /* Căn giữa ảnh */
+    }
+}
