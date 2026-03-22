@@ -84,18 +84,20 @@
 
                 <div class="research-project">
                     <div class="research-project-img">
-                        <img src="Images/Bone_remodelling.png" alt="Bone Remodeling Simulation">
+                        <img src="Images/Hyperelastic_Model.png" alt="Hyperelastic Model">
+                        <img src="Images/Skin.png" alt="Skin Modeling">
                     </div>
                     <div class="research-project-content">
-                        <h3 class="research-project-title">Bone Remodelling Algorithms using Numerical Meshless Method</h3>
+                        <h3 class="research-project-title">Hyperelastics Mathematical Model Predict Nonlinear Behavior of Human Skin</h3>
                         <div class="research-project-desc">
                             <p>
-                                Bone remodeling is a complex biological process that can be modeled using advanced numerical methods. In this project, we investigate the development of high-fidelity biomechanical simulations using the meshless method instead of finite element method (FEM) approach. It allows for more accurate predictions of bone density changes under various loading conditions, which have important use cases for orthopedic implant design and biomechanics.
+                                Human skin exhibits complex mechanical behavior characterized by anisotropy, viscoelasticity, and nonlinearity. These properties are influenced by a variety of factors, including internal structural composition, aging, sustained mechanical loading, and environmental conditions. To accurately capture this nonlinear response, hyperelastic models, formulated through strain energy density functions and displacement fields are commonly employed. Our project investigates the mechanical properties and behavior of hyperelastics mathematical models to verify their practical applicability as a substitute for human skin in medical robotics or artificial human skin.
                             </p>
                             <ul class="research-bullet-list">
-                                <li><b>Radial Point Interpolation Method (RPIM):</b> The numerical approximation employs a combination of radial basis functions (RBFs) and conventional polynomial basis functions (PBFs).</li>
-                                <li><b>Moving Kriging Interpolation Method (MKIM):</b> The local approximation is defined as the sum of a deterministic polynomial part and a systematic deviation represented by a correlation function.</li>
-                                <li><b>Tchebychev-Radial Point Interpolation Method (TRPIM):</b> The radial basis functions (RBFs) are combined with the Tchebychev polynomial basis functions (TPBFs) instead of conventional polynomial functions to interpolate for the physical field in the problem domain.</li>
+                                <li><b>Mooney-Rivlin:</b> Using a strain energy density function, which is a linear combination of two algebraic invariants of the left Cauchy-Green deformation tensor.</li>
+                                <li><b>Ogden:</b> Considering as compressible and incompressible materials, and the volume part of the Ogden model is neglected for an incompressible material.</li>
+                                <li><b>Neo-Hookean:</b> Strain energy function is defined for the large deformation of the material, and it depends on the right Cauchy-Green deformation tensor as well as Ogden strain energy function.</li>
+                                <li><b>Gasser-Ogden-Holzapfel:</b> Utilized to model the fibers of skin with two ideal directions.</li>
                             </ul>
                         </div>
                     </div>
