@@ -100,11 +100,17 @@ img {
 }
 
 .sidebar-footer {
-    font-size: 10px;
     position: absolute; 
     bottom: 40px; 
-    color: #999;
     left: 40px; 
+    
+    /* --- 3 DÒNG MỚI BỔ SUNG --- */
+    right: 40px;             /* Chốt chặn lề phải, ép chữ phải rớt dòng */
+    text-align: justify;     /* Căn đều 2 bên trái phải */
+    font-size: 10px;         /* Thu nhỏ chữ lại một chút cho hợp với phần disclaimer */
+    
+    color: #999;
+    line-height: 1.4;
 }
 
 /* =========================================
