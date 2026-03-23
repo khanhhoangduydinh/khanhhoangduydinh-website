@@ -701,8 +701,8 @@ p.caption + p.caption {
     font-size: 15px;
     font-style: italic;
     color: #555;                /* Chữ màu xám để phân cấp thông tin */
-    margin-top: 0 !important;
-    margin-bottom: 15px !important;
+    margin-top: 0;
+    margin-bottom: 5px !important;
 }
 
 /* 3. Đoạn văn mô tả môn học */
