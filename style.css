@@ -711,5 +711,5 @@ p.caption + p.caption {
     line-height: 1.6;           /* Giãn dòng rộng dễ đọc */
     color: #333;
     text-align: justify;        /* Căn đều hai bên vuông vức */
-    margin-top: 0 !important;
+    margin-top: 3 !important;
 }
