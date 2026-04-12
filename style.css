@@ -713,3 +713,45 @@ p.caption + p.caption {
     text-align: justify;        /* Căn đều hai bên vuông vức */
     margin-top: 3 !important;
 }
+
+/* =========================================
+   GIAO DIỆN TRANG GALLERY (THƯ VIỆN ẢNH)
+========================================= */
+
+.gallery-grid {
+    display: grid;
+    /* Tự động chia cột: mỗi ảnh tối thiểu 250px, nếu màn hình rộng sẽ tự chia thành 2, 3 hoặc 4 cột */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; /* Khoảng cách giữa các ảnh */
+    margin-top: 20px;
+}
+
+.gallery-item {
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Đổ bóng nhẹ */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+/* Hiệu ứng nảy lên và bóng đậm hơn khi di chuột vào ảnh */
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 200px; /* Cố định chiều cao để các ảnh luôn bằng nhau */
+    object-fit: cover; /* Cắt cúp ảnh tự động để không bị méo tỷ lệ */
+    display: block;
+}
+
+.gallery-caption {
+    padding: 12px 10px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+    font-style: italic;
+    border-top: 1px solid #eee;
+}
